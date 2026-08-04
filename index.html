@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cafetería Anita</title>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+
+body{
+
+margin:0;
+background:#F7F2EA;
+font-family:Arial, sans-serif;
+color:#3B2A20;
+
+}
+
+
+
+header{
+
+background:linear-gradient(135deg,#4F6B45,#6B4F3A);
+color:white;
+text-align:center;
+padding:45px 20px;
+
+}
+
+
+
+.logo{
+
+font-size:70px;
+
+}
+
+
+
+h1{
+
+font-size:40px;
+margin:5px;
+
+}
+
+
+
+.boton{
+
+display:inline-block;
+background:#2F3D27;
+color:white;
+padding:12px 20px;
+border-radius:25px;
+text-decoration:none;
+margin:8px;
+font-weight:bold;
+
+}
+
+
+
+
+
+.menu{
+
+background:white;
+padding:15px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+position:sticky;
+top:0;
+z-index:10;
+
+}
+
+
+
+.menu a{
+
+background:#4F6B45;
+color:white;
+padding:10px 14px;
+border-radius:20px;
+text-decoration:none;
+
+}
+
+
+
+
+
+.categoria{
+
+background:#4F6B45;
+color:white;
+margin:30px 15px 15px;
+padding:15px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+
+.producto{
+
+background:white;
+margin:12px 15px;
+padding:18px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+}
+
+
+
+.precio{
+
+color:#6B4F3A;
+font-weight:bold;
+
+}
+
+
+
+.agregar{
+
+background:#4F6B45;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:20px;
+font-weight:bold;
+
+}
+
+
+
+
+.info{
+
+background:white;
+margin:15px;
+padding:20px;
+border-radius:20px;
+
+}
+
+
+
+.info input,
+.info select{
+
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:15px;
+border:1px solid #ccc;
+
+}
+
+
+
+
+
+.carrito{
+
+position:fixed;
+bottom:15px;
+left:15px;
+right:15px;
+background:#6B4F3A;
+color:white;
+padding:15px;
+border-radius:20px;
+z-index:20;
+max-height:300px;
+overflow:auto;
+
+}
+
+
+
+
+.eliminar{
+
+background:#B23B3B;
+color:white;
+border:none;
+border-radius:50%;
+
+}
+
+
+
+
+.carrito button{
+
+width:100%;
+padding:12px;
+margin-top:8px;
+border:none;
+border-radius:20px;
+font-weight:bold;
+
+}
+
+
+
+.whatsapp{
+
+background:#25D366;
+color:white;
+
+}
+
+
+
+.limpiar{
+
+background:#ddd;
+
+}
+
+
+
+
+
+footer{
+
+background:#6B4F3A;
+color:white;
+text-align:center;
+padding:30px;
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+<header>
+
+
+<div class="logo">
+☕
+</div>
+
+
+<h1>
+CAFETERÍA ANITA
+</h1>
+
+
+<h2>
+Café de especialidad
+</h2>
+
+
+<p>
+Un momento especial en cada taza ✨
+</p>
+
+
+<p>
+📍 Av. San Martín 2883<br>
+Puerto Rico, Misiones
+</p>
+
+
+
+<a class="boton" href="https://wa.me/543743618225">
+💬 WhatsApp
+</a>
+
+
+</header>
+
+
+
+
+
+<nav class="menu">
+
+
+<a href="#cafes">☕ Cafés</a>
+
+<a href="#dulces">🥐 Dulces</a>
+
+<a href="#salados">🥪 Salados</a>
+
+<a href="#combos">🍳 Combos</a>
+
+<a href="#matcha">🍵 Matcha</a>
+
+<a href="#bebidas">🥤 Bebidas</a>
+
+
+</nav>
+
+
+
+
+
+<div class="info">
+
+
+<h3>
+📝 Datos del pedido
+</h3>
+
+
+<label>
+👤 Nombre del cliente
+</label>
+
+
+<input id="cliente" placeholder="Ej: Juan">
+
+
+
+<label>
+📦 Tipo de pedido
+</label>
+
+
+<select id="tipo">
+
+
+<option>
+🪑 En mesa
+</option>
+
+
+<option>
+🛍️ Para llevar
+</option>
+
+
+<option>
+🚶 Retirar en local
+</option>
+
+
+</select>
+
+
+
+
+<label>
+🪑 Número de mesa
+</label>
+
+
+<select id="mesa">
+
+
+<option>
+Mesa 1
+</option>
+
+
+<option>
+Mesa 2
+</option>
+
+
+<option>
+Mesa 3
+</option>
+
+
+<option>
+Mesa 4
+</option>
+
+
+<option>
+Mesa 5
+</option>
+
+
+<option>
+Mesa 6
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<h2 id="cafes" class="categoria">
+
+☕ Cafés
+
+</h2>
+
+<div class="producto">
+
+<span>
+☕ Café Solo<br>
+<b class="precio">$2.500</b>
+</span>
+
+<button class="agregar" onclick="agregar('Café Solo',2500)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🥛 Café con leche<br>
+<b class="precio">$4.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Café con leche',4000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+☕ Cortado<br>
+<b class="precio">$3.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Cortado',3000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+☕ Capuchino<br>
+<b class="precio">$4.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Capuchino',4000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🥛 Latte<br>
+<b class="precio">$4.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Latte',4000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🍫 Mocaccino<br>
+<b class="precio">$5.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Mocaccino',5000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+
+<h2 id="dulces" class="categoria">
+🥐 Dulces Artesanales
+</h2>
+
+
+
+
+<div class="producto">
+
+<span>
+🥐 Medialuna simple<br>
+<b class="precio">$900</b>
+</span>
+
+<button class="agregar" onclick="agregar('Medialuna simple',900)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥐 Medialuna dulce de leche<br>
+<b class="precio">$1.200</b>
+</span>
+
+<button class="agregar" onclick="agregar('Medialuna dulce de leche',1200)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥐 Medialuna crema pastelera<br>
+<b class="precio">$1.200</b>
+</span>
+
+<button class="agregar" onclick="agregar('Medialuna crema pastelera',1200)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥧 Pastafrola<br>
+<b class="precio">$2.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Pastafrola',2000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍪 Alfajor de Maicena<br>
+<b class="precio">$500</b>
+</span>
+
+<button class="agregar" onclick="agregar('Alfajor de Maicena',500)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍫 Brownie<br>
+<b class="precio">$3.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Brownie',3000)">
+➕ Agregar
+</button>
+
+</div>
+
+<h2 id="salados" class="categoria">
+🥪 Salados
+</h2>
+
+
+
+<div class="producto">
+
+<span>
+🥐 Medialuna jamón y queso<br>
+<b class="precio">$3.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Medialuna jamón y queso',3000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🧀 Chipitas (100g)<br>
+<b class="precio">$1.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Chipitas 100g',1000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🍞 Tostadas simples<br>
+<b class="precio">$1.500</b>
+</span>
+
+<button class="agregar" onclick="agregar('Tostadas simples',1500)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🥪 Tostadas con jamón y queso<br>
+<b class="precio">$3.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Tostadas jamón y queso',3000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+<div class="producto">
+
+<span>
+🍳 Tostada con huevo<br>
+<b class="precio">$2.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Tostada con huevo',2000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+
+<h2 id="combos" class="categoria">
+🍳 Desayunos & Combos
+</h2>
+
+
+
+
+<div class="producto">
+
+<span>
+☕ Desayuno Anita<br>
+<b class="precio">Consultar</b>
+</span>
+
+<button class="agregar" onclick="agregar('Desayuno Anita',0)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥐 Desayuno Clásico<br>
+<b class="precio">Consultar</b>
+</span>
+
+<button class="agregar" onclick="agregar('Desayuno Clásico',0)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍫 Merienda Dulce<br>
+<b class="precio">Consultar</b>
+</span>
+
+<button class="agregar" onclick="agregar('Merienda Dulce',0)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥪 Merienda Salada<br>
+<b class="precio">Consultar</b>
+</span>
+
+<button class="agregar" onclick="agregar('Merienda Salada',0)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+
+
+<h2 id="matcha" class="categoria">
+🍵 Matcha
+</h2>
+
+
+
+
+<div class="producto">
+
+<span>
+🍵 Matcha cobertura<br>
+<b class="precio">$7.500</b>
+</span>
+
+<button class="agregar" onclick="agregar('Matcha cobertura',7500)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍓 Matcha frutilla<br>
+<b class="precio">$6.500</b>
+</span>
+
+<button class="agregar" onclick="agregar('Matcha frutilla',6500)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥛 Matcha con leche<br>
+<b class="precio">$4.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Matcha con leche',4000)">
+➕ Agregar
+</button>
+
+</div>
+
+<h2 id="bebidas" class="categoria">
+🥤 Bebidas Frías
+</h2>
+
+
+
+
+<div class="producto">
+
+<span>
+🥤 Licuado con leche<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Licuado con leche',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥤 Licuado con agua<br>
+<b class="precio">$4.500</b>
+</span>
+
+<button class="agregar" onclick="agregar('Licuado con agua',4500)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍓 Smoothie Frutilla<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Smoothie Frutilla',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍌 Smoothie Banana<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Smoothie Banana',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🥭 Smoothie Maracuyá<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Smoothie Maracuyá',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍫 Milkshake Chocolate<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Milkshake Chocolate',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍓 Milkshake Frutilla<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Milkshake Frutilla',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<span>
+🍦 Milkshake Vainilla<br>
+<b class="precio">$6.000</b>
+</span>
+
+<button class="agregar" onclick="agregar('Milkshake Vainilla',6000)">
+➕ Agregar
+</button>
+
+</div>
+
+<div class="carrito">
+
+<h3>🛒 Tu pedido</h3>
+
+
+<div id="lista">
+Todavía no agregaste productos
+</div>
+
+
+<p>
+Total: $<span id="total">0</span>
+</p>
+
+
+
+<button class="limpiar" onclick="vaciarPedido()">
+🗑️ Vaciar pedido
+</button>
+
+
+
+<button class="whatsapp" onclick="enviarPedido()">
+📲 Enviar pedido por WhatsApp
+</button>
+
+
+</div>
+
+
+
+
+<footer>
+
+☕ CAFETERÍA ANITA
+
+<br><br>
+
+"Café, sabores y momentos especiales"
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+let pedido=[];
+
+
+
+function agregar(nombre,precio){
+
+
+pedido.push({
+
+nombre:nombre,
+precio:precio
+
+});
+
+
+mostrarPedido();
+
+
+}
+
+
+
+
+
+function eliminar(index){
+
+
+pedido.splice(index,1);
+
+
+mostrarPedido();
+
+
+}
+
+
+
+
+
+function vaciarPedido(){
+
+
+pedido=[];
+
+
+mostrarPedido();
+
+
+}
+
+
+
+
+
+function mostrarPedido(){
+
+
+let texto="";
+
+let total=0;
+
+
+
+pedido.forEach(function(item,index){
+
+
+total += item.precio;
+
+
+
+texto += `
+
+<div class="item-carrito">
+
+☕ ${item.nombre}
+
+<button class="eliminar" onclick="eliminar(${index})">
+❌
+</button>
+
+
+</div>
+
+`;
+
+
+});
+
+
+
+if(pedido.length==0){
+
+
+texto="Todavía no agregaste productos";
+
+
+}
+
+
+
+document.getElementById("lista").innerHTML=texto;
+
+
+document.getElementById("total").innerHTML=total;
+
+
+
+}
+
+
+
+
+
+function enviarPedido(){
+
+
+
+let cliente=document.getElementById("cliente").value;
+
+
+let tipo=document.getElementById("tipo").value;
+
+
+let mesa=document.getElementById("mesa").value;
+
+
+
+let mensaje="Hola Cafetería Anita ☕%0A%0A";
+
+
+
+mensaje+="👤 Cliente: "+cliente+"%0A";
+
+
+mensaje+="📦 Pedido: "+tipo+"%0A";
+
+
+mensaje+="🪑 "+mesa+"%0A%0A";
+
+
+
+mensaje+="🛒 Productos:%0A";
+
+
+
+
+pedido.forEach(function(item){
+
+
+mensaje+="☕ "+item.nombre+"%0A";
+
+
+});
+
+
+
+
+mensaje+="%0A💰 Total: $"+document.getElementById("total").innerHTML;
+
+
+
+
+window.open(
+
+"https://wa.me/543743618225?text="+mensaje
+
+);
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
