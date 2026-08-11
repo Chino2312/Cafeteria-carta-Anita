@@ -14,21 +14,6 @@
 <title>Cafetería Anita | Carta Virtual</title>
 
 
-<!-- =====================================================
-     FUENTES
-===================================================== -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-      rel="stylesheet">
-
-
 <style>
 
 /* =====================================================
@@ -37,28 +22,23 @@
 
 :root {
 
-    --verde-oscuro: #26352b;
-    --verde: #526b55;
-    --verde-claro: #82977d;
-    --verde-suave: #dfe8dc;
-    --marron: #5a3828;
-    --marron-claro: #8a6048;
-    --cafe: #3b271e;
-    --crema: #f5efe5;
-    --crema-clara: #fffaf2;
+    --verde: #26352b;
+    --verde-claro: #526b58;
+    --verde-suave: #dfe7df;
+
+    --marron: #5a4030;
+    --marron-claro: #8b6a52;
+
+    --crema: #f7f1e5;
     --blanco: #ffffff;
     --negro: #171717;
-    --gris: #77716b;
-    --dorado: #c99b5a;
-    --rojo-suave: #9b493e;
 
-    --radio: 22px;
+    --rojo: #9b3d35;
+
+    --whatsapp: #25D366;
 
     --sombra:
-        0 12px 35px rgba(0,0,0,.14);
-
-    --sombra-fuerte:
-        0 20px 55px rgba(0,0,0,.22);
+        0 10px 30px rgba(0,0,0,.20);
 
 }
 
@@ -68,19 +48,32 @@
 ===================================================== */
 
 * {
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
 }
 
+
 html {
+
     scroll-behavior: smooth;
+
 }
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 body {
 
     font-family:
-        "DM Sans",
+        Arial,
+        Helvetica,
         sans-serif;
 
     color:
@@ -89,31 +82,14 @@ body {
     min-height:
         100vh;
 
-    overflow-x:
-        hidden;
-
     background:
-        #2d2925;
 
-}
+        linear-gradient(
+            rgba(24,30,25,.78),
+            rgba(61,42,31,.82)
+        ),
 
-
-/* =====================================================
-   FONDO
-===================================================== */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: -3;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=90");
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85");
 
     background-size:
         cover;
@@ -124,180 +100,39 @@ body::before {
     background-attachment:
         fixed;
 
-    transform:
-        scale(1.04);
-
-}
-
-
-body::after {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: -2;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(25,35,28,.76),
-            rgba(55,35,25,.78)
-        );
-
-    pointer-events:
-        none;
-
-}
-
-
-.fondo-luz {
-
-    position: fixed;
-
-    z-index: -1;
-
-    width: 500px;
-
-    height: 500px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(201,155,90,.13),
-            transparent 68%
-        );
-
-    top: -220px;
-
-    right: -150px;
-
-    pointer-events: none;
-
-    animation:
-        moverLuz 10s ease-in-out infinite;
-
-}
-
-
-.fondo-luz-2 {
-
-    position: fixed;
-
-    z-index: -1;
-
-    width: 450px;
-
-    height: 450px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(130,151,125,.12),
-            transparent 68%
-        );
-
-    bottom: -200px;
-
-    left: -150px;
-
-    pointer-events: none;
-
-    animation:
-        moverLuz2 12s ease-in-out infinite;
+    overflow-x:
+        hidden;
 
 }
 
 
 /* =====================================================
-   ANIMACIONES
+   EFECTO DE FONDO
 ===================================================== */
 
-@keyframes aparecer {
+body::before {
 
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+    content:
+        "";
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    position:
+        fixed;
 
-}
+    inset:
+        0;
 
+    pointer-events:
+        none;
 
-@keyframes flotar {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.10),
+            transparent 25%
+        );
 
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
-}
-
-
-@keyframes moverLuz {
-
-    0% {
-        transform: translate(0,0);
-    }
-
-    50% {
-        transform: translate(-35px,35px);
-    }
-
-    100% {
-        transform: translate(0,0);
-    }
-
-}
-
-
-@keyframes moverLuz2 {
-
-    0% {
-        transform: translate(0,0);
-    }
-
-    50% {
-        transform: translate(30px,-30px);
-    }
-
-    100% {
-        transform: translate(0,0);
-    }
-
-}
-
-
-@keyframes brillo {
-
-    0% {
-        opacity: .45;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: .45;
-    }
+    z-index:
+        -1;
 
 }
 
@@ -306,304 +141,122 @@ body::after {
    CONTENEDOR
 ===================================================== */
 
-.app {
+.contenedor {
 
     width:
-        min(100%, 1150px);
-
-    margin:
-        0 auto;
-
-    padding-bottom:
-        120px;
-
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-
-    position: relative;
-
-    min-height:
-        510px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        45px 20px;
-
-    overflow:
-        hidden;
-
-    border-radius:
-        0 0 42px 42px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(38,53,43,.48),
-            rgba(82,52,37,.55)
-        );
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.30);
-
-    animation:
-        aparecer .9s ease both;
-
-}
-
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 330px;
-
-    height: 330px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    top: -170px;
-
-    right: -80px;
-
-}
-
-
-.hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-
-    height: 250px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(201,155,90,.14);
-
-    bottom: -130px;
-
-    left: -80px;
-
-}
-
-
-.hero-content {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    color:
-        white;
+        100%;
 
     max-width:
-        700px;
-
-}
-
-
-.logo-cup {
-
-    width:
-        108px;
-
-    height:
-        108px;
+        1100px;
 
     margin:
-        0 auto 22px;
+        auto;
 
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,255,255,.12);
-
-    border:
-        1px solid
-        rgba(255,255,255,.25);
-
-    backdrop-filter:
-        blur(14px);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.25);
-
-    font-size:
-        52px;
-
-    animation:
-        flotar 4s ease-in-out infinite;
-
-}
-
-
-.hero h1 {
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        clamp(52px, 9vw, 86px);
-
-    line-height:
-        .95;
-
-    margin-bottom:
+    padding:
         15px;
 
 }
 
 
-.hero-subtitulo {
+/* =====================================================
+   HEADER
+===================================================== */
 
-    font-size:
-        clamp(15px, 2vw, 18px);
+header {
 
-    line-height:
-        1.7;
-
-    color:
-        rgba(255,255,255,.90);
-
-}
-
-
-.hero-linea {
-
-    width:
-        75px;
-
-    height:
-        2px;
-
-    margin:
-        23px auto;
-
-    background:
-        var(--dorado);
-
-    border-radius:
-        20px;
-
-}
-
-
-.hero-badge {
-
-    display:
-        inline-flex;
-
-    align-items:
+    text-align:
         center;
 
-    gap:
-        9px;
-
     padding:
-        11px 18px;
+        35px 15px 25px;
 
-    border-radius:
-        999px;
+    color:
+        white;
 
-    background:
-        rgba(255,255,255,.10);
-
-    border:
-        1px solid
-        rgba(255,255,255,.18);
-
-    backdrop-filter:
-        blur(10px);
-
-    font-size:
-        12px;
-
-    font-weight:
-        600;
+    animation:
+        aparecerArriba .9s ease both;
 
 }
 
 
-.punto {
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
 
     width:
-        8px;
+        90px;
 
     height:
-        8px;
+        90px;
+
+    margin:
+        0 auto 12px;
 
     border-radius:
         50%;
 
     background:
-        #b4d4a8;
+        var(--crema);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        44px;
 
     box-shadow:
-        0 0 14px #b4d4a8;
+        0 10px 30px rgba(0,0,0,.35);
 
     animation:
-        brillo 2s infinite;
+        flotarLogo 3s ease-in-out infinite;
 
 }
 
 
-.frase-cafe {
+/* =====================================================
+   TITULO
+===================================================== */
 
-    margin-top:
-        25px;
-
-    color:
-        rgba(255,255,255,.68);
+header h1 {
 
     font-family:
-        "Playfair Display",
+        Georgia,
         serif;
 
     font-size:
-        14px;
+        clamp(
+            30px,
+            7vw,
+            48px
+        );
 
-    font-style:
-        italic;
+    letter-spacing:
+        1px;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,.45);
+
+}
+
+
+header p {
+
+    margin-top:
+        7px;
+
+    opacity:
+        .95;
+
+    font-size:
+        16px;
 
 }
 
@@ -612,30 +265,10 @@ body::after {
    NAVEGACIÓN
 ===================================================== */
 
-.nav-wrapper {
-
-    position:
-        sticky;
-
-    top:
-        10px;
-
-    z-index:
-        80;
-
-    padding:
-        10px 12px;
-
-}
-
-
-.nav-categorias {
+nav {
 
     display:
         flex;
-
-    align-items:
-        center;
 
     gap:
         8px;
@@ -644,56 +277,52 @@ body::after {
         auto;
 
     padding:
-        8px;
+        10px 5px 15px;
 
-    border-radius:
-        20px;
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        50;
 
     background:
-        rgba(255,250,242,.90);
+        rgba(38,53,43,.94);
 
     backdrop-filter:
-        blur(18px);
+        blur(10px);
 
-    box-shadow:
-        var(--sombra);
-
-    scrollbar-width:
-        none;
+    animation:
+        aparecer .8s ease both;
 
 }
 
 
-.nav-categorias::-webkit-scrollbar {
-    display: none;
-}
-
+/* =====================================================
+   BOTONES NAVEGACIÓN
+===================================================== */
 
 .nav-btn {
-
-    flex:
-        0 0 auto;
 
     border:
         none;
 
-    padding:
-        11px 17px;
-
-    border-radius:
-        999px;
+    white-space:
+        nowrap;
 
     background:
-        transparent;
+        var(--crema);
 
     color:
-        var(--marron);
+        var(--verde);
 
-    font-family:
-        inherit;
+    padding:
+        10px 15px;
 
-    font-size:
-        12px;
+    border-radius:
+        30px;
 
     font-weight:
         700;
@@ -701,27 +330,33 @@ body::after {
     cursor:
         pointer;
 
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.18);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
 }
 
 
 .nav-btn:hover {
 
-    background:
-        rgba(82,107,85,.10);
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 7px 18px rgba(0,0,0,.25);
 
 }
 
 
-.nav-btn.activo {
+.nav-btn:active {
 
-    background:
-        var(--verde-oscuro);
-
-    color:
-        white;
-
-    box-shadow:
-        0 7px 20px rgba(38,53,43,.25);
+    transform:
+        scale(.92);
 
 }
 
@@ -733,135 +368,37 @@ body::after {
 .seccion {
 
     margin:
-        0 12px 28px;
+        28px 0 38px;
 
-    padding:
-        27px 20px;
+    scroll-margin-top:
+        80px;
 
-    border-radius:
-        var(--radio);
-
-    background:
-        rgba(255,250,242,.95);
-
-    backdrop-filter:
-        blur(14px);
-
-    box-shadow:
-        var(--sombra);
-
-    opacity:
-        0;
-
-    transform:
-        translateY(28px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+    animation:
+        aparecerSeccion .8s ease both;
 
 }
 
 
-.seccion.visible {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-.seccion-titulo {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    margin-bottom:
-        20px;
-
-}
-
-
-.titulo-izq {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        13px;
-
-}
-
-
-.icono-seccion {
-
-    width:
-        52px;
-
-    height:
-        52px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        17px;
-
-    background:
-        var(--verde-oscuro);
+.titulo-seccion {
 
     color:
         white;
 
-    font-size:
-        24px;
-
-}
-
-
-.seccion h2 {
-
     font-family:
-        "Playfair Display",
+        Georgia,
         serif;
 
-    color:
-        var(--marron);
-
     font-size:
-        28px;
+        29px;
 
-}
+    margin-bottom:
+        16px;
 
+    padding-left:
+        5px;
 
-.seccion-descripcion {
-
-    margin-top:
-        2px;
-
-    color:
-        var(--gris);
-
-    font-size:
-        12px;
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.45);
 
 }
 
@@ -876,7 +413,13 @@ body::after {
         grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
 
     gap:
         15px;
@@ -884,133 +427,117 @@ body::after {
 }
 
 
+/* =====================================================
+   TARJETA
+===================================================== */
+
 .producto {
 
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        19px;
+    background:
+        rgba(255,255,255,.96);
 
     border-radius:
         20px;
 
-    background:
-        var(--blanco);
-
-    border:
-        1px solid
-        rgba(90,56,40,.07);
+    padding:
+        17px;
 
     box-shadow:
-        0 7px 24px rgba(0,0,0,.07);
-
-    cursor:
-        pointer;
-
-    opacity:
-        0;
-
-    transform:
-        translateY(20px);
+        var(--sombra);
 
     transition:
-        opacity .6s ease,
-        transform .6s ease,
-        box-shadow .35s ease;
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:
+        tarjetaEntrada .7s ease both;
 
 }
 
 
-.producto.visible {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-
-}
-
+/* Movimiento al pasar/tocar */
 
 .producto:hover {
 
     transform:
-        translateY(-7px);
+        translateY(-7px)
+        scale(1.015);
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.14);
+        0 16px 35px rgba(0,0,0,.25);
 
 }
 
+
+/* =====================================================
+   ICONO PRODUCTO
+===================================================== */
 
 .producto-icono {
 
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        48px;
-
-    height:
-        48px;
+    font-size:
+        36px;
 
     margin-bottom:
-        13px;
+        8px;
 
-    border-radius:
-        15px;
-
-    background:
-        var(--crema);
-
-    font-size:
-        27px;
+    transition:
+        transform .35s ease;
 
 }
 
+
+.producto:hover .producto-icono {
+
+    transform:
+        scale(1.15)
+        rotate(-5deg);
+
+}
+
+
+/* =====================================================
+   TITULO PRODUCTO
+===================================================== */
 
 .producto h3 {
 
     color:
         var(--marron);
 
-    font-size:
-        16px;
+    font-family:
+        Georgia,
+        serif;
 
-    margin-bottom:
-        6px;
+    font-size:
+        20px;
 
 }
 
 
-.producto p {
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.producto-descripcion {
 
     color:
-        var(--gris);
+        #666;
 
     font-size:
-        12px;
+        13px;
 
-    line-height:
-        1.55;
-
-    min-height:
-        37px;
+    margin:
+        5px 0 12px;
 
 }
 
 
-.producto-bottom {
+/* =====================================================
+   FOOTER PRODUCTO
+===================================================== */
+
+.producto-footer {
 
     display:
         flex;
@@ -1021,16 +548,20 @@ body::after {
     justify-content:
         space-between;
 
-    margin-top:
-        17px;
+    gap:
+        10px;
 
 }
 
 
+/* =====================================================
+   PRECIO
+===================================================== */
+
 .precio {
 
     color:
-        var(--verde-oscuro);
+        var(--verde);
 
     font-size:
         18px;
@@ -1041,19 +572,14 @@ body::after {
 }
 
 
-.agregar {
+/* =====================================================
+   AGREGAR
+===================================================== */
 
-    width:
-        40px;
-
-    height:
-        40px;
+.btn-agregar {
 
     border:
         none;
-
-    border-radius:
-        50%;
 
     background:
         var(--verde);
@@ -1061,92 +587,44 @@ body::after {
     color:
         white;
 
-    font-size:
-        23px;
+    padding:
+        10px 14px;
+
+    border-radius:
+        11px;
+
+    font-weight:
+        700;
 
     cursor:
         pointer;
 
-}
-
-
-.agregar:hover {
-
-    background:
-        var(--verde-oscuro);
-
-    transform:
-        scale(1.08);
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
 
 }
 
 
-.etiqueta {
-
-    position:
-        absolute;
-
-    top:
-        12px;
-
-    right:
-        12px;
-
-    padding:
-        5px 9px;
-
-    border-radius:
-        8px;
+.btn-agregar:hover {
 
     background:
-        rgba(201,155,90,.14);
-
-    color:
         var(--marron);
 
-    font-size:
-        9px;
+    transform:
+        translateY(-2px);
 
-    font-weight:
-        800;
-
-}
-
-
-.decoracion {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    margin:
-        4px 0 24px;
-
-    color:
-        var(--dorado);
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.2);
 
 }
 
 
-.decoracion::before,
-.decoracion::after {
+.btn-agregar:active {
 
-    content:
-        "";
-
-    height:
-        1px;
-
-    flex:
-        1;
-
-    background:
-        rgba(90,56,40,.14);
+    transform:
+        scale(.90);
 
 }
 
@@ -1155,294 +633,63 @@ body::after {
    CARRITO
 ===================================================== */
 
-.carrito-flotante {
+.carrito {
 
-    position:
-        fixed;
+    background:
+        rgba(247,241,229,.98);
 
-    right:
-        20px;
-
-    bottom:
+    border-radius:
         22px;
 
-    z-index:
-        100;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    border:
-        none;
-
     padding:
-        12px 13px 12px 16px;
+        20px;
 
-    border-radius:
-        999px;
-
-    background:
-        var(--verde-oscuro);
-
-    color:
-        white;
-
-    font-family:
-        inherit;
-
-    font-weight:
-        700;
+    margin:
+        30px 0;
 
     box-shadow:
-        0 14px 35px rgba(0,0,0,.28);
+        0 15px 40px rgba(0,0,0,.25);
 
-    cursor:
-        pointer;
+    animation:
+        aparecerSeccion .8s ease both;
 
 }
 
 
-.carrito-icono {
-    font-size: 21px;
-}
-
-
-.carrito-texto {
-    font-size: 13px;
-}
-
-
-.carrito-contador {
-
-    min-width:
-        25px;
-
-    height:
-        25px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--dorado);
+.carrito h2 {
 
     color:
-        var(--cafe);
-
-    font-size:
-        11px;
-
-    font-weight:
-        900;
-
-}
-
-
-.carrito-overlay {
-
-    position:
-        fixed;
-
-    inset:
-        0;
-
-    z-index:
-        105;
-
-    background:
-        rgba(15,18,15,.62);
-
-    backdrop-filter:
-        blur(5px);
-
-    opacity:
-        0;
-
-    visibility:
-        hidden;
-
-    transition:
-        .35s ease;
-
-}
-
-
-.carrito-overlay.abierto {
-
-    opacity:
-        1;
-
-    visibility:
-        visible;
-
-}
-
-
-.carrito-panel {
-
-    position:
-        fixed;
-
-    top:
-        0;
-
-    right:
-        0;
-
-    z-index:
-        110;
-
-    width:
-        min(430px,94vw);
-
-    height:
-        100vh;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    background:
-        var(--crema-clara);
-
-    box-shadow:
-        -20px 0 60px rgba(0,0,0,.28);
-
-    transform:
-        translateX(105%);
-
-    transition:
-        transform .45s ease;
-
-}
-
-
-.carrito-panel.abierto {
-
-    transform:
-        translateX(0);
-
-}
-
-
-.carrito-header {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    padding:
-        25px 22px;
-
-    background:
-        var(--verde-oscuro);
-
-    color:
-        white;
-
-}
-
-
-.carrito-mini-titulo {
-
-    font-size:
-        9px;
-
-    letter-spacing:
-        1.8px;
-
-    opacity:
-        .65;
-
-}
-
-
-.carrito-header h2 {
-
-    margin-top:
-        4px;
+        var(--verde);
 
     font-family:
-        "Playfair Display",
+        Georgia,
         serif;
 
-    font-size:
-        28px;
+    margin-bottom:
+        14px;
 
 }
 
 
-.cerrar-carrito {
+.carrito-vacio {
 
-    width:
-        42px;
-
-    height:
-        42px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.2);
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,255,255,.10);
+    text-align:
+        center;
 
     color:
-        white;
+        #777;
 
-    font-size:
-        28px;
-
-    cursor:
-        pointer;
+    padding:
+        15px;
 
 }
 
 
 /* =====================================================
-   ITEMS DEL CARRITO
+   ITEM CARRITO
 ===================================================== */
 
-.carrito-items {
-
-    flex:
-        1;
-
-    overflow-y:
-        auto;
-
-    padding:
-        18px 20px;
-
-}
-
-
-.carrito-item {
+.item-carrito {
 
     display:
         flex;
@@ -1454,50 +701,29 @@ body::after {
         space-between;
 
     gap:
-        12px;
-
-    padding:
-        14px;
-
-    margin-bottom:
         10px;
 
-    border-radius:
-        15px;
+    padding:
+        13px 0;
 
-    background:
-        white;
+    border-bottom:
+        1px solid #ddd;
 
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.07);
-
-}
-
-
-.carrito-item-nombre {
-
-    color:
-        var(--marron);
-
-    font-size:
-        13px;
-
-    font-weight:
-        800;
+    animation:
+        itemEntrada .3s ease both;
 
 }
 
 
-.carrito-item-precio {
+.item-info {
 
-    margin-top:
-        4px;
+    flex:
+        1;
 
-    color:
-        var(--verde-oscuro);
+}
 
-    font-size:
-        12px;
+
+.item-nombre {
 
     font-weight:
         700;
@@ -1505,7 +731,25 @@ body::after {
 }
 
 
-.carrito-controles {
+.item-precio {
+
+    color:
+        #666;
+
+    font-size:
+        13px;
+
+    margin-top:
+        3px;
+
+}
+
+
+/* =====================================================
+   CONTROLES
+===================================================== */
+
+.controles {
 
     display:
         flex;
@@ -1519,31 +763,50 @@ body::after {
 }
 
 
-.cantidad-btn {
+.btn-cantidad {
 
     width:
-        28px;
+        31px;
 
     height:
-        28px;
+        31px;
 
     border:
         none;
 
     border-radius:
-        50%;
+        9px;
 
     background:
-        var(--verde-suave);
+        var(--verde);
 
     color:
-        var(--verde-oscuro);
+        white;
 
-    font-weight:
-        800;
+    font-size:
+        18px;
 
     cursor:
         pointer;
+
+    transition:
+        .2s;
+
+}
+
+
+.btn-cantidad:hover {
+
+    transform:
+        scale(1.1);
+
+}
+
+
+.btn-cantidad:active {
+
+    transform:
+        scale(.85);
 
 }
 
@@ -1551,16 +814,13 @@ body::after {
 .cantidad {
 
     min-width:
-        20px;
+        25px;
 
     text-align:
         center;
 
-    font-size:
-        13px;
-
     font-weight:
-        800;
+        700;
 
 }
 
@@ -1574,253 +834,179 @@ body::after {
         transparent;
 
     color:
-        var(--rojo-suave);
+        var(--rojo);
 
     font-size:
-        15px;
+        18px;
 
     cursor:
         pointer;
 
-}
-
-
-.carrito-vacio {
-
-    text-align:
-        center;
-
-    padding:
-        60px 20px;
-
-    color:
-        var(--gris);
+    transition:
+        .2s;
 
 }
 
 
-.carrito-vacio-icono {
+.eliminar-item:hover {
 
-    font-size:
-        45px;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.carrito-vacio h3 {
-
-    color:
-        var(--marron);
-
-    margin-bottom:
-        6px;
+    transform:
+        scale(1.2)
+        rotate(8deg);
 
 }
 
 
 /* =====================================================
-   RESUMEN
+   TOTAL
 ===================================================== */
 
-.carrito-resumen {
-
-    padding:
-        17px 20px;
-
-    border-top:
-        1px solid
-        rgba(90,56,40,.10);
-
-    background:
-        white;
-
-}
-
-
-.resumen-linea {
+.carrito-total {
 
     display:
         flex;
 
     justify-content:
         space-between;
-
-    color:
-        var(--gris);
-
-    font-size:
-        13px;
-
-    margin-bottom:
-        10px;
-
-}
-
-
-.resumen-total {
-
-    display:
-        flex;
 
     align-items:
         center;
 
-    justify-content:
-        space-between;
+    margin-top:
+        18px;
 
     padding-top:
-        12px;
+        15px;
 
     border-top:
-        1px dashed
-        rgba(90,56,40,.18);
+        2px solid #ccc;
 
-    color:
-        var(--marron);
+    font-size:
+        21px;
+
+    font-weight:
+        800;
 
 }
 
 
-.resumen-total strong {
+.total-precio {
 
     color:
-        var(--verde-oscuro);
-
-    font-size:
-        24px;
+        var(--verde);
 
 }
 
 
 /* =====================================================
-   DATOS
+   DATOS PEDIDO
 ===================================================== */
 
 .datos-pedido {
 
-    padding:
-        15px 20px;
-
-    max-height:
-        245px;
-
-    overflow-y:
-        auto;
-
-}
-
-
-.datos-pedido h3 {
-
-    margin-bottom:
-        11px;
-
-    color:
-        var(--marron);
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
+    margin-top:
         18px;
 
 }
 
 
+.datos-pedido label {
+
+    display:
+        block;
+
+    font-weight:
+        700;
+
+    margin:
+        11px 0 5px;
+
+}
+
+
 .datos-pedido input,
-.datos-pedido select,
 .datos-pedido textarea {
 
     width:
         100%;
 
-    margin-bottom:
-        9px;
-
     padding:
-        12px 13px;
+        12px;
 
     border:
-        1px solid
-        rgba(90,56,40,.13);
+        1px solid #ccc;
 
     border-radius:
-        12px;
+        11px;
+
+    font-size:
+        15px;
 
     outline:
         none;
 
-    background:
-        white;
+    transition:
+        border .2s,
+        box-shadow .2s;
 
-    color:
-        var(--negro);
+}
 
-    font-family:
-        inherit;
 
-    font-size:
-        12px;
+.datos-pedido input:focus,
+.datos-pedido textarea:focus {
+
+    border:
+        2px solid var(--verde-claro);
+
+    box-shadow:
+        0 0 0 4px rgba(82,107,88,.12);
 
 }
 
 
 .datos-pedido textarea {
 
+    min-height:
+        80px;
+
     resize:
         vertical;
 
-    min-height:
-        55px;
+    font-family:
+        inherit;
 
 }
 
 
 /* =====================================================
-   WHATSAPP
+   BOTÓN ENVIAR DENTRO DEL CARRITO
 ===================================================== */
 
-.btn-whatsapp {
+.btn-enviar {
 
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        10px;
-
-    margin:
-        0 20px 20px;
-
-    padding:
-        15px;
+    width:
+        100%;
 
     border:
         none;
 
-    border-radius:
-        15px;
-
     background:
-        #355f3c;
+        var(--whatsapp);
 
     color:
         white;
 
-    font-family:
-        inherit;
+    padding:
+        15px;
+
+    margin-top:
+        15px;
+
+    border-radius:
+        13px;
 
     font-size:
-        13px;
+        17px;
 
     font-weight:
         800;
@@ -1828,13 +1014,271 @@ body::after {
     cursor:
         pointer;
 
+    box-shadow:
+        0 7px 18px rgba(37,211,102,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
 }
 
 
-.btn-whatsapp span:first-child {
+.btn-enviar:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 11px 25px rgba(37,211,102,.35);
+
+}
+
+
+.btn-enviar:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+/* =====================================================
+   BOTONES FLOTANTES
+===================================================== */
+
+.botones-flotantes {
+
+    position:
+        fixed;
+
+    right:
+        18px;
+
+    bottom:
+        18px;
+
+    z-index:
+        150;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+    align-items:
+        center;
+
+}
+
+
+/* =====================================================
+   GLOBITO FLOTANTE
+===================================================== */
+
+.boton-flotante {
+
+    position:
+        relative;
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     font-size:
-        20px;
+        27px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+/* =====================================================
+   BOTÓN CARRITO
+===================================================== */
+
+.boton-carrito {
+
+    background:
+        var(--verde);
+
+}
+
+
+/* =====================================================
+   BOTÓN WHATSAPP
+===================================================== */
+
+.boton-enviar-flotante {
+
+    background:
+        var(--whatsapp);
+
+    animation:
+        pulsoWhatsApp 2s infinite;
+
+}
+
+
+/* =====================================================
+   HOVER FLOTANTES
+===================================================== */
+
+.boton-flotante:hover {
+
+    transform:
+        scale(1.12);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.4);
+
+}
+
+
+.boton-flotante:active {
+
+    transform:
+        scale(.90);
+
+}
+
+
+/* =====================================================
+   ETIQUETA FLOTANTE
+===================================================== */
+
+.etiqueta-flotante {
+
+    position:
+        absolute;
+
+    right:
+        72px;
+
+    white-space:
+        nowrap;
+
+    background:
+        rgba(20,20,20,.88);
+
+    color:
+        white;
+
+    padding:
+        7px 11px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    opacity:
+        0;
+
+    transform:
+        translateX(8px);
+
+    pointer-events:
+        none;
+
+    transition:
+        .25s;
+
+}
+
+
+.boton-flotante:hover
+.etiqueta-flotante {
+
+    opacity:
+        1;
+
+    transform:
+        translateX(0);
+
+}
+
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+.contador-carrito {
+
+    position:
+        absolute;
+
+    top:
+        -3px;
+
+    right:
+        -3px;
+
+    background:
+        var(--rojo);
+
+    color:
+        white;
+
+    width:
+        23px;
+
+    height:
+        23px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
 
 }
 
@@ -1852,10 +1296,23 @@ body::after {
         50%;
 
     bottom:
-        90px;
+        105px;
 
-    z-index:
-        200;
+    transform:
+        translateX(-50%)
+        translateY(30px);
+
+    background:
+        var(--verde);
+
+    color:
+        white;
+
+    padding:
+        13px 19px;
+
+    border-radius:
+        13px;
 
     display:
         flex;
@@ -1866,38 +1323,20 @@ body::after {
     gap:
         8px;
 
-    padding:
-        12px 17px;
-
-    border-radius:
-        999px;
-
-    background:
-        var(--verde-oscuro);
-
-    color:
-        white;
-
-    font-size:
-        12px;
-
-    font-weight:
-        700;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.25);
-
     opacity:
         0;
 
-    visibility:
-        hidden;
-
-    transform:
-        translate(-50%,20px);
+    pointer-events:
+        none;
 
     transition:
-        .35s ease;
+        .35s;
+
+    z-index:
+        250;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.3);
 
 }
 
@@ -1907,11 +1346,9 @@ body::after {
     opacity:
         1;
 
-    visibility:
-        visible;
-
     transform:
-        translate(-50%,0);
+        translateX(-50%)
+        translateY(0);
 
 }
 
@@ -1920,98 +1357,212 @@ body::after {
    FOOTER
 ===================================================== */
 
-.footer {
-
-    margin:
-        0 12px;
-
-    padding:
-        45px 20px;
+footer {
 
     text-align:
         center;
 
     color:
-        rgba(255,255,255,.82);
+        white;
 
-}
-
-
-.footer-logo {
-
-    width:
-        60px;
-
-    height:
-        60px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    margin:
-        0 auto 14px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.16);
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,255,255,.08);
+    padding:
+        30px 15px 120px;
 
     font-size:
-        28px;
+        13px;
+
+    animation:
+        aparecer .8s ease both;
 
 }
 
 
-.footer h2 {
+footer strong {
 
     font-family:
-        "Playfair Display",
+        Georgia,
         serif;
 
     font-size:
-        27px;
+        18px;
 
 }
 
 
-.footer p {
+/* =====================================================
+   ANIMACIONES
+===================================================== */
 
-    margin-top:
-        7px;
+@keyframes aparecer {
 
-    font-size:
-        12px;
+    from {
 
-    opacity:
-        .65;
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
 
 }
 
 
-.footer-linea {
+@keyframes aparecerArriba {
 
-    width:
-        55px;
+    from {
 
-    height:
-        1px;
+        opacity:
+            0;
 
-    margin:
-        18px auto;
+        transform:
+            translateY(-35px);
 
-    background:
-        var(--dorado);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes aparecerSeccion {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes tarjetaEntrada {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes itemEntrada {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateX(15px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+@keyframes flotarLogo {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+
+    }
+
+}
+
+
+@keyframes pulsoWhatsApp {
+
+    0% {
+
+        box-shadow:
+            0 8px 25px rgba(0,0,0,.35);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 8px 25px rgba(37,211,102,.55),
+            0 0 0 8px rgba(37,211,102,.12);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 8px 25px rgba(0,0,0,.35);
+
+    }
 
 }
 
@@ -2020,102 +1571,138 @@ body::after {
    RESPONSIVE
 ===================================================== */
 
-@media (min-width:700px) {
+@media (max-width: 600px) {
 
-    .productos {
-        grid-template-columns:
-            repeat(3,minmax(0,1fr));
-    }
+    .contenedor {
 
-}
-
-
-@media (max-width:650px) {
-
-    body::before {
-        background-attachment:
-            scroll;
-    }
-
-    .hero {
-        min-height:
-            470px;
-        border-radius:
-            0 0 32px 32px;
-    }
-
-    .hero h1 {
-        font-size:
-            54px;
-    }
-
-    .logo-cup {
-        width:
-            92px;
-        height:
-            92px;
-        font-size:
-            44px;
-    }
-
-    .seccion {
         padding:
-            22px 15px;
+            10px;
+
     }
+
 
     .productos {
+
         grid-template-columns:
-            1fr;
+            1fr 1fr;
+
+        gap:
+            10px;
+
     }
 
-}
+
+    .producto {
+
+        padding:
+            12px;
+
+    }
 
 
-@media (max-width:500px) {
+    .producto-icono {
 
-    .carrito-texto {
+        font-size:
+            30px;
+
+    }
+
+
+    .producto h3 {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .precio {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .btn-agregar {
+
+        padding:
+            8px 10px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .botones-flotantes {
+
+        right:
+            14px;
+
+        bottom:
+            14px;
+
+    }
+
+
+    .boton-flotante {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        font-size:
+            25px;
+
+    }
+
+
+    .etiqueta-flotante {
+
         display:
             none;
-    }
 
-    .carrito-flotante {
-
-        width:
-            56px;
-
-        height:
-            56px;
-
-        justify-content:
-            center;
-
-        padding:
-            0;
-
-    }
-
-    .carrito-panel {
-        width:
-            100%;
     }
 
 }
 
 
-@media (prefers-reduced-motion:reduce) {
+@media (max-width: 380px) {
+
+    .productos {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPETAR REDUCCIÓN DE MOVIMIENTO
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
 
-        animation:
-            none !important;
+        animation-duration:
+            .01ms !important;
 
-        transition:
-            none !important;
+        animation-iteration-count:
+            1 !important;
 
         scroll-behavior:
             auto !important;
+
+        transition-duration:
+            .01ms !important;
 
     }
 
@@ -2128,2096 +1715,1181 @@ body::after {
 
 <body>
 
-<div class="fondo-luz"></div>
-<div class="fondo-luz-2"></div>
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<div class="app">
+<header>
+
+    <div class="logo">
+        ☕
+    </div>
+
+    <h1>
+        Cafetería Anita
+    </h1>
+
+    <p>
+        Carta Virtual
+    </p>
+
+</header>
+
 
 
 <!-- =====================================================
-     PORTADA
+     CONTENIDO
 ===================================================== -->
 
-<header class="hero">
-
-    <div class="hero-content">
-
-        <div class="logo-cup">
-            ☕
-        </div>
-
-        <h1>
-            Anita
-        </h1>
-
-        <p class="hero-subtitulo">
-            Cafetería & Confitería
-            <br>
-            Café, cosas ricas y momentos para disfrutar.
-        </p>
-
-        <div class="hero-linea"></div>
-
-        <div class="hero-badge">
-            <span class="punto"></span>
-            Carta virtual
-        </div>
-
-        <p class="frase-cafe">
-            "Un buen momento siempre empieza con un buen café."
-        </p>
-
-    </div>
-
-</header>
+<div class="contenedor">
 
 
 <!-- =====================================================
      NAVEGACIÓN
 ===================================================== -->
 
-<div class="nav-wrapper">
+<nav>
 
-<nav class="nav-categorias">
-
-<button class="nav-btn activo"
+    <button
+        class="nav-btn"
         onclick="irA('cafes')">
-    ☕ Cafés
-</button>
+        ☕ Cafés
+    </button>
 
-<button class="nav-btn"
+    <button
+        class="nav-btn"
         onclick="irA('matcha')">
-    🍵 Matcha
-</button>
+        🍵 Matcha
+    </button>
 
-<button class="nav-btn"
+    <button
+        class="nav-btn"
         onclick="irA('dulces')">
-    🥐 Dulces
-</button>
+        🥐 Dulces
+    </button>
 
-<button class="nav-btn"
+    <button
+        class="nav-btn"
         onclick="irA('salados')">
-    🧀 Salados
-</button>
+        🧀 Salados
+    </button>
 
-<button class="nav-btn"
+    <button
+        class="nav-btn"
         onclick="irA('licuados')">
-    🥤 Licuados
-</button>
+        🥤 Licuados
+    </button>
 
-<button class="nav-btn"
+    <button
+        class="nav-btn"
         onclick="irA('smoothies')">
-    🍓 Smoothies
-</button>
+        🍓 Smoothies
+    </button>
 
-<button class="nav-btn"
+    <button
+        class="nav-btn"
         onclick="irA('milkshakes')">
-    🥛 Milkshakes
-</button>
+        🥛 Milkshakes
+    </button>
+
+    <button
+        class="nav-btn"
+        onclick="irA('jugos')">
+        🍊 Jugos
+    </button>
 
 </nav>
 
-</div>
 
 
 <!-- =====================================================
      CAFÉS
 ===================================================== -->
 
-<section class="seccion" id="cafes">
+<section
+    class="seccion"
+    id="cafes">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        ☕ Cafés
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    ☕
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">☕</div>
 
-<h2>
-    Cafés
-</h2>
+            <h3>Espresso</h3>
 
-<p class="seccion-descripcion">
-    El clásico que nunca falla
-</p>
+            <p class="producto-descripcion">
+                Café intenso y aromático.
+            </p>
 
-</div>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    $2.500
+                </span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Espresso',2500)">
+                    Agregar
+                </button>
 
+            </div>
 
-<div class="decoracion">
-    <span>☕</span>
-</div>
+        </div>
 
 
-<div class="productos">
+        <div class="producto">
 
+            <div class="producto-icono">☕</div>
 
-<!-- ESPRESSO -->
+            <h3>Americano</h3>
 
-<article class="producto"
-         data-id="espresso"
-         data-nombre="Espresso"
-         data-precio="2500">
+            <p class="producto-descripcion">
+                Espresso con agua caliente.
+            </p>
 
-<div class="producto-icono">☕</div>
+            <div class="producto-footer">
 
-<h3>Espresso</h3>
+                <span class="precio">
+                    $3.000
+                </span>
 
-<p>
-    Café intenso y aromático.
-</p>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Americano',3000)">
+                    Agregar
+                </button>
 
-<div class="producto-bottom">
+            </div>
 
-<span class="precio">$2.500</span>
+        </div>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
 
-</div>
+        <div class="producto">
 
-</article>
+            <div class="producto-icono">🥛</div>
 
+            <h3>Café con leche</h3>
 
-<!-- AMERICANO -->
+            <p class="producto-descripcion">
+                Café espresso con leche.
+            </p>
 
-<article class="producto"
-         data-id="americano"
-         data-nombre="Americano"
-         data-precio="3000">
+            <div class="producto-footer">
 
-<div class="producto-icono">☕</div>
+                <span class="precio">
+                    $4.000
+                </span>
 
-<h3>Americano</h3>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Café con leche',4000)">
+                    Agregar
+                </button>
 
-<p>
-    Café suave y equilibrado.
-</p>
+            </div>
 
-<div class="producto-bottom">
+        </div>
 
-<span class="precio">$3.000</span>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+        <div class="producto">
 
-</div>
+            <div class="producto-icono">☕</div>
 
-</article>
+            <h3>Cappuccino</h3>
 
+            <p class="producto-descripcion">
+                Café, leche y espuma.
+            </p>
 
-<!-- CAFÉ CON LECHE -->
+            <div class="producto-footer">
 
-<article class="producto"
-         data-id="cafe-leche"
-         data-nombre="Café con leche"
-         data-precio="4000">
+                <span class="precio">
+                    $5.000
+                </span>
 
-<div class="producto-icono">🥛</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Cappuccino',5000)">
+                    Agregar
+                </button>
 
-<h3>Café con leche</h3>
+            </div>
 
-<p>
-    Café acompañado de leche cremosa.
-</p>
+        </div>
 
-<div class="producto-bottom">
 
-<span class="precio">$4.000</span>
+        <div class="producto">
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <div class="producto-icono">☕</div>
 
-</div>
+            <h3>Latte</h3>
 
-</article>
+            <p class="producto-descripcion">
+                Espresso suave con leche.
+            </p>
 
+            <div class="producto-footer">
 
-<!-- CAPPUCCINO -->
+                <span class="precio">
+                    $5.000
+                </span>
 
-<article class="producto"
-         data-id="cappuccino"
-         data-nombre="Cappuccino"
-         data-precio="5000">
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Latte',5000)">
+                    Agregar
+                </button>
 
-<div class="producto-icono">☕</div>
+            </div>
 
-<h3>Cappuccino</h3>
+        </div>
 
-<p>
-    Café, leche y espuma cremosa.
-</p>
 
-<div class="producto-bottom">
+        <div class="producto">
 
-<span class="precio">$5.000</span>
+            <div class="producto-icono">🍫</div>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <h3>Mocha</h3>
 
-</div>
+            <p class="producto-descripcion">
+                Café con chocolate y leche.
+            </p>
 
-</article>
+            <div class="producto-footer">
 
+                <span class="precio">
+                    $6.500
+                </span>
 
-<!-- LATTE -->
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Mocha',6500)">
+                    Agregar
+                </button>
 
-<article class="producto"
-         data-id="latte"
-         data-nombre="Latte"
-         data-precio="5000">
+            </div>
 
-<div class="producto-icono">🥛</div>
+        </div>
 
-<h3>Latte</h3>
-
-<p>
-    Café suave con leche.
-</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-
-<!-- MOCHA -->
-
-<article class="producto"
-         data-id="mocha"
-         data-nombre="Mocha"
-         data-precio="6500">
-
-<div class="producto-icono">🍫</div>
-
-<h3>Mocha</h3>
-
-<p>
-    Café con un toque irresistible de chocolate.
-</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-</div>
+    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      MATCHA
 ===================================================== -->
 
-<section class="seccion" id="matcha">
+<section
+    class="seccion"
+    id="matcha">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        🍵 Matcha
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    🍵
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">🍓</div>
 
-<h2>Matcha</h2>
+            <h3>
+                Matcha latte frío con frutilla
+            </h3>
 
-<p class="seccion-descripcion">
-    Fresco, cremoso y diferente
-</p>
+            <p class="producto-descripcion">
+                Matcha, leche y frutilla.
+            </p>
 
-</div>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    $7.000
+                </span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Matcha latte frío con frutilla',7000)">
+                    Agregar
+                </button>
 
+            </div>
 
-<div class="decoracion">
-    <span>🌿</span>
-</div>
-
-
-<div class="productos">
-
-
-<article class="producto"
-         data-id="matcha-frutilla"
-         data-nombre="Matcha latte frío con frutilla"
-         data-precio="7000">
-
-<span class="etiqueta">
-    Especial
-</span>
-
-<div class="producto-icono">🍓</div>
-
-<h3>
-    Matcha latte frío con frutilla
-</h3>
-
-<p>
-    Matcha frío, leche y frutilla.
-</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$7.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
+        </div>
 
 
-<article class="producto"
-         data-id="matcha-cafe"
-         data-nombre="Matcha frío con café"
-         data-precio="7500">
+        <div class="producto">
 
-<span class="etiqueta">
-    Especial
-</span>
+            <div class="producto-icono">🍵</div>
 
-<div class="producto-icono">🍵</div>
+            <h3>
+                Matcha frío con café
+            </h3>
 
-<h3>
-    Matcha frío con café
-</h3>
+            <p class="producto-descripcion">
+                Matcha, leche y café.
+            </p>
 
-<p>
-    La combinación de matcha y café.
-</p>
+            <div class="producto-footer">
 
-<div class="producto-bottom">
+                <span class="precio">
+                    $7.500
+                </span>
 
-<span class="precio">$7.500</span>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Matcha frío con café',7500)">
+                    Agregar
+                </button>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            </div>
 
-</div>
-
-</article>
+        </div>
 
 
-<article class="producto"
-         data-id="matcha-leche"
-         data-nombre="Matcha solo con leche"
-         data-precio="6000">
+        <div class="producto">
 
-<div class="producto-icono">🌿</div>
+            <div class="producto-icono">🍵</div>
 
-<h3>
-    Matcha solo con leche
-</h3>
+            <h3>
+                Matcha solo con leche
+            </h3>
 
-<p>
-    Matcha suave preparado con leche.
-</p>
+            <p class="producto-descripcion">
+                Matcha preparado con leche.
+            </p>
 
-<div class="producto-bottom">
+            <div class="producto-footer">
 
-<span class="precio">$6.000</span>
+                <span class="precio">
+                    $6.000
+                </span>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Matcha solo con leche',6000)">
+                    Agregar
+                </button>
 
-</div>
+            </div>
 
-</article>
+        </div>
 
-</div>
+    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      DULCES
 ===================================================== -->
 
-<section class="seccion" id="dulces">
+<section
+    class="seccion"
+    id="dulces">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        🥐 Dulces
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    🥐
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">🥐</div>
 
-<h2>Dulces</h2>
+            <h3>Medialuna</h3>
 
-<p class="seccion-descripcion">
-    Algo rico para acompañar tu café
-</p>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">$900</span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Medialuna',900)">
+                    Agregar
+                </button>
 
-</div>
+            </div>
 
+        </div>
 
-<div class="decoracion">
-    <span>🥐</span>
-</div>
 
+        <div class="producto">
 
-<div class="productos">
+            <div class="producto-icono">🥧</div>
 
+            <h3>Mini frolita</h3>
 
-<article class="producto"
-         data-id="medialuna"
-         data-nombre="Medialuna"
-         data-precio="900">
+            <div class="producto-footer">
 
-<div class="producto-icono">🥐</div>
+                <span class="precio">$3.500</span>
 
-<h3>Medialuna</h3>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Mini frolita',3500)">
+                    Agregar
+                </button>
 
-<p>Unidad.</p>
+            </div>
 
-<div class="producto-bottom">
+        </div>
 
-<span class="precio">$900</span>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+        <div class="producto">
 
-</div>
+            <div class="producto-icono">🍩</div>
 
-</article>
+            <h3>Churros</h3>
 
+            <p class="producto-descripcion">
+                Precio por unidad.
+            </p>
 
-<article class="producto"
-         data-id="mini-frolita"
-         data-nombre="Mini frolita"
-         data-precio="3500">
+            <div class="producto-footer">
 
-<div class="producto-icono">🥧</div>
+                <span class="precio">$1.000</span>
 
-<h3>Mini frolita</h3>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Churro',1000)">
+                    Agregar
+                </button>
 
-<p>Dulce artesanal.</p>
+            </div>
 
-<div class="producto-bottom">
+        </div>
 
-<span class="precio">$3.500</span>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+        <div class="producto">
 
-</div>
+            <div class="producto-icono">🥧</div>
 
-</article>
+            <h3>Pastafrola</h3>
 
+            <div class="producto-footer">
 
-<article class="producto"
-         data-id="churros"
-         data-nombre="Churros"
-         data-precio="1000">
+                <span class="precio">$2.500</span>
 
-<div class="producto-icono">🍩</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Pastafrola',2500)">
+                    Agregar
+                </button>
 
-<h3>Churros</h3>
+            </div>
 
-<p>Precio por unidad.</p>
+        </div>
 
-<div class="producto-bottom">
 
-<span class="precio">$1.000</span>
+        <div class="producto">
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <div class="producto-icono">🍪</div>
 
-</div>
+            <h3>Alfajor de Maizena</h3>
 
-</article>
+            <div class="producto-footer">
 
+                <span class="precio">$500</span>
 
-<article class="producto"
-         data-id="pastafrola"
-         data-nombre="Pastafrola"
-         data-precio="2500">
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Alfajor de Maizena',500)">
+                    Agregar
+                </button>
 
-<div class="producto-icono">🥧</div>
+            </div>
 
-<h3>Pastafrola</h3>
+        </div>
 
-<p>Porción artesanal.</p>
 
-<div class="producto-bottom">
+        <div class="producto">
 
-<span class="precio">$2.500</span>
+            <div class="producto-icono">🍪</div>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <h3>Cookie</h3>
 
-</div>
+            <div class="producto-footer">
 
-</article>
+                <span class="precio">$500</span>
 
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Cookie',500)">
+                    Agregar
+                </button>
 
-<article class="producto"
-         data-id="alfajor-maizena"
-         data-nombre="Alfajor de Maizena"
-         data-precio="500">
+            </div>
 
-<div class="producto-icono">🍪</div>
+        </div>
 
-<h3>Alfajor de Maizena</h3>
 
-<p>Precio por unidad.</p>
+        <div class="producto">
 
-<div class="producto-bottom">
+            <div class="producto-icono">🍫</div>
 
-<span class="precio">$500</span>
+            <h3>Brownie</h3>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">$3.000</span>
 
-</article>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Brownie',3000)">
+                    Agregar
+                </button>
 
+            </div>
 
-<article class="producto"
-         data-id="cookie"
-         data-nombre="Cookie"
-         data-precio="500">
+        </div>
 
-<div class="producto-icono">🍪</div>
 
-<h3>Cookie</h3>
+        <div class="producto">
 
-<p>Precio por unidad.</p>
+            <div class="producto-icono">🥧</div>
 
-<div class="producto-bottom">
+            <h3>Tartita</h3>
 
-<span class="precio">$500</span>
+            <div class="producto-footer">
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+                <span class="precio">$3.500</span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Tartita',3500)">
+                    Agregar
+                </button>
 
-</article>
+            </div>
 
+        </div>
 
-<article class="producto"
-         data-id="brownie"
-         data-nombre="Brownie"
-         data-precio="3000">
-
-<div class="producto-icono">🍫</div>
-
-<h3>Brownie</h3>
-
-<p>Precio por porción.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$3.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="tartita"
-         data-nombre="Tartita"
-         data-precio="3500">
-
-<div class="producto-icono">🥧</div>
-
-<h3>Tartita</h3>
-
-<p>Pequeña y deliciosa.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$3.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-</div>
+    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      SALADOS
 ===================================================== -->
 
-<section class="seccion" id="salados">
+<section
+    class="seccion"
+    id="salados">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        🧀 Salados
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    🧀
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">🧀</div>
 
-<h2>Salados</h2>
+            <h3>Chipitas</h3>
 
-<p class="seccion-descripcion">
-    Opciones ricas para cualquier momento
-</p>
+            <p class="producto-descripcion">
+                Precio por 100 g.
+            </p>
 
-</div>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    $1.000
+                </span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Chipitas 100 g',1000)">
+                    Agregar
+                </button>
 
+            </div>
 
-<div class="decoracion">
-    <span>🧀</span>
-</div>
+        </div>
 
 
-<div class="productos">
+        <div class="producto">
 
+            <div class="producto-icono">🍕</div>
 
-<article class="producto"
-         data-id="chipitas"
-         data-nombre="Chipitas"
-         data-precio="1000">
+            <h3>Mini pizzeta</h3>
 
-<div class="producto-icono">🧀</div>
+            <div class="producto-footer">
 
-<h3>Chipitas</h3>
+                <span class="precio">
+                    $3.000
+                </span>
 
-<p>Precio cada 100 g.</p>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Mini pizzeta',3000)">
+                    Agregar
+                </button>
 
-<div class="producto-bottom">
+            </div>
 
-<span class="precio">$1.000</span>
+        </div>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
 
-</div>
+        <div class="producto">
 
-</article>
+            <div class="producto-icono">🥖</div>
 
+            <h3>Mini pan cuca</h3>
 
-<article class="producto"
-         data-id="mini-pizzeta"
-         data-nombre="Mini pizzeta"
-         data-precio="3000">
+            <div class="producto-footer">
 
-<div class="producto-icono">🍕</div>
+                <span class="precio">
+                    $2.500
+                </span>
 
-<h3>Mini pizzeta</h3>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Mini pan cuca',2500)">
+                    Agregar
+                </button>
 
-<p>Ideal para una comida rápida.</p>
+            </div>
 
-<div class="producto-bottom">
+        </div>
 
-<span class="precio">$3.000</span>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+        <div class="producto">
 
-</div>
+            <div class="producto-icono">🍞</div>
 
-</article>
+            <h3>Tostadas simples</h3>
 
+            <div class="producto-footer">
 
-<article class="producto"
-         data-id="mini-pan-cuca"
-         data-nombre="Mini pan cuca"
-         data-precio="2500">
+                <span class="precio">
+                    $2.000
+                </span>
 
-<div class="producto-icono">🥖</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Tostadas simples',2000)">
+                    Agregar
+                </button>
 
-<h3>Mini pan cuca</h3>
+            </div>
 
-<p>Suave y recién preparado.</p>
+        </div>
 
-<div class="producto-bottom">
 
-<span class="precio">$2.500</span>
+        <div class="producto">
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <div class="producto-icono">🍳</div>
 
-</div>
+            <h3>Tostadas de huevo</h3>
 
-</article>
+            <div class="producto-footer">
 
+                <span class="precio">
+                    $3.000
+                </span>
 
-<article class="producto"
-         data-id="tostadas-simples"
-         data-nombre="Tostadas simples"
-         data-precio="2000">
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Tostadas de huevo',3000)">
+                    Agregar
+                </button>
 
-<div class="producto-icono">🍞</div>
+            </div>
 
-<h3>Tostadas simples</h3>
+        </div>
 
-<p>Tostadas crocantes.</p>
 
-<div class="producto-bottom">
+        <div class="producto">
 
-<span class="precio">$2.000</span>
+            <div class="producto-icono">🥪</div>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <h3>Tostada jamón y queso</h3>
 
-</div>
+            <div class="producto-footer">
 
-</article>
+                <span class="precio">
+                    $4.000
+                </span>
 
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Tostada jamón y queso',4000)">
+                    Agregar
+                </button>
 
-<article class="producto"
-         data-id="tostadas-huevo"
-         data-nombre="Tostadas de huevo"
-         data-precio="3000">
+            </div>
 
-<div class="producto-icono">🍳</div>
+        </div>
 
-<h3>Tostadas de huevo</h3>
 
-<p>Tostadas acompañadas con huevo.</p>
+        <div class="producto">
 
-<div class="producto-bottom">
+            <div class="producto-icono">🥪</div>
 
-<span class="precio">$3.000</span>
+            <h3>Sándwich de chipa</h3>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    $6.500
+                </span>
 
-</article>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Sándwich de chipa',6500)">
+                    Agregar
+                </button>
 
+            </div>
 
-<article class="producto"
-         data-id="tostada-jamon-queso"
-         data-nombre="Tostada de jamón y queso"
-         data-precio="4000">
+        </div>
 
-<div class="producto-icono">🥪</div>
 
-<h3>Tostada de jamón y queso</h3>
+        <div class="producto">
 
-<p>Jamón y queso sobre tostada.</p>
+            <div class="producto-icono">🥖</div>
 
-<div class="producto-bottom">
+            <h3>Criollitos</h3>
 
-<span class="precio">$4.000</span>
+            <p class="producto-descripcion">
+                Precio por 100 g.
+            </p>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    $1.400
+                </span>
 
-</article>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Criollitos 100 g',1400)">
+                    Agregar
+                </button>
 
+            </div>
 
-<article class="producto"
-         data-id="sandwich-chipa"
-         data-nombre="Sándwich de chipa"
-         data-precio="6500">
+        </div>
 
-<span class="etiqueta">
-    Especial
-</span>
 
-<div class="producto-icono">🥪</div>
+        <div class="producto">
 
-<h3>Sándwich de chipa</h3>
+            <div class="producto-icono">🧀</div>
 
-<p>Una opción abundante y deliciosa.</p>
+            <h3>Mbeyú</h3>
 
-<div class="producto-bottom">
+            <div class="producto-footer">
 
-<span class="precio">$6.500</span>
+                <span class="precio">
+                    $3.000
+                </span>
 
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Mbeyú',3000)">
+                    Agregar
+                </button>
 
-</div>
+            </div>
 
-</article>
+        </div>
 
-
-<article class="producto"
-         data-id="criollitos-queso"
-         data-nombre="Criollitos de queso"
-         data-precio="1400">
-
-<div class="producto-icono">🧀</div>
-
-<h3>Criollitos de queso</h3>
-
-<p>Precio cada 100 g.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$1.400</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-
-<!-- =====================================================
-     NUEVO — MBEYÚ
-===================================================== -->
-
-<article class="producto"
-         data-id="mbeyu"
-         data-nombre="Mbeyú"
-         data-precio="3000">
-
-<span class="etiqueta">
-    Nuevo
-</span>
-
-<div class="producto-icono">
-    🧀
-</div>
-
-<h3>
-    Mbeyú
-</h3>
-
-<p>
-    Tradicional, casero y delicioso.
-</p>
-
-<div class="producto-bottom">
-
-<span class="precio">
-    $3.000
-</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-
-</div>
+    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      LICUADOS
 ===================================================== -->
 
-<section class="seccion" id="licuados">
+<section
+    class="seccion"
+    id="licuados">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        🥤 Licuados
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    🥤
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">
+                🍓
+            </div>
 
-<h2>Licuados</h2>
+            <h3>
+                Licuado de fruta
+            </h3>
 
-<p class="seccion-descripcion">
-    Frescos y naturales
-</p>
+            <p class="producto-descripcion">
+                Fruta fresca con leche.
+            </p>
 
-</div>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    $12.500
+                </span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Licuado de fruta',12500)">
+                    Agregar
+                </button>
 
+            </div>
 
-<div class="decoracion">
-    <span>🍓</span>
-</div>
+        </div>
 
-
-<h3 style="
-    color:var(--marron);
-    margin-bottom:14px;
-    font-size:16px;
-">
-    💧 Con agua
-</h3>
-
-
-<div class="productos">
-
-
-<!-- LICUADOS AGUA -->
-
-<article class="producto"
-         data-id="licuado-agua-anana"
-         data-nombre="Licuado de Ananá con agua"
-         data-precio="4500">
-
-<div class="producto-icono">🍍</div>
-
-<h3>Ananá</h3>
-
-<p>Licuado con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$4.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-agua-frutilla"
-         data-nombre="Licuado de Frutilla con agua"
-         data-precio="4500">
-
-<div class="producto-icono">🍓</div>
-
-<h3>Frutilla</h3>
-
-<p>Licuado con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$4.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-agua-banana"
-         data-nombre="Licuado de Banana con agua"
-         data-precio="4500">
-
-<div class="producto-icono">🍌</div>
-
-<h3>Banana</h3>
-
-<p>Licuado con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$4.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-agua-acai"
-         data-nombre="Licuado de Açaí con agua"
-         data-precio="5000">
-
-<div class="producto-icono">🫐</div>
-
-<h3>Açaí</h3>
-
-<p>Licuado con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-agua-maracuya"
-         data-nombre="Licuado de Maracuyá con agua"
-         data-precio="4000">
-
-<div class="producto-icono">🥭</div>
-
-<h3>Maracuyá</h3>
-
-<p>Licuado con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$4.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-agua-durazno"
-         data-nombre="Licuado de Durazno con agua"
-         data-precio="4500">
-
-<div class="producto-icono">🍑</div>
-
-<h3>Durazno</h3>
-
-<p>Licuado con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$4.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-</div>
-
-
-<h3 style="
-    color:var(--marron);
-    margin:30px 0 14px;
-    font-size:16px;
-">
-    🥛 Con leche
-</h3>
-
-
-<div class="productos">
-
-
-<article class="producto"
-         data-id="licuado-leche-anana"
-         data-nombre="Licuado de Ananá con leche"
-         data-precio="6000">
-
-<div class="producto-icono">🍍</div>
-
-<h3>Ananá</h3>
-
-<p>Licuado con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-leche-frutilla"
-         data-nombre="Licuado de Frutilla con leche"
-         data-precio="6000">
-
-<div class="producto-icono">🍓</div>
-
-<h3>Frutilla</h3>
-
-<p>Licuado con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-leche-banana"
-         data-nombre="Licuado de Banana con leche"
-         data-precio="6000">
-
-<div class="producto-icono">🍌</div>
-
-<h3>Banana</h3>
-
-<p>Licuado con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-leche-acai"
-         data-nombre="Licuado de Açaí con leche"
-         data-precio="6500">
-
-<div class="producto-icono">🫐</div>
-
-<h3>Açaí</h3>
-
-<p>Licuado con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-leche-maracuya"
-         data-nombre="Licuado de Maracuyá con leche"
-         data-precio="5500">
-
-<div class="producto-icono">🥭</div>
-
-<h3>Maracuyá</h3>
-
-<p>Licuado con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="licuado-leche-durazno"
-         data-nombre="Licuado de Durazno con leche"
-         data-precio="6000">
-
-<div class="producto-icono">🍑</div>
-
-<h3>Durazno</h3>
-
-<p>Licuado con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-</div>
-
-
-<!-- =====================================================
-     JUGO DE NARANJA
-===================================================== -->
-
-<h3 style="
-    color:var(--marron);
-    margin:30px 0 14px;
-    font-size:16px;
-">
-    🍊 Jugos
-</h3>
-
-
-<div class="productos">
-
-<article class="producto"
-         data-id="jugo-naranja"
-         data-nombre="Jugo de naranja"
-         data-precio="1500">
-
-<span class="etiqueta">
-    Nuevo
-</span>
-
-<div class="producto-icono">
-    🍊
-</div>
-
-<h3>
-    Jugo de naranja
-</h3>
-
-<p>
-    Jugo de naranja natural.
-</p>
-
-<div class="producto-bottom">
-
-<span class="precio">
-    $1.500
-</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-    +
-</button>
-
-</div>
-
-</article>
-
-</div>
+    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      SMOOTHIES
 ===================================================== -->
 
-<section class="seccion" id="smoothies">
+<section
+    class="seccion"
+    id="smoothies">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        🍓 Smoothies
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    🍓
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">
+                🍓
+            </div>
 
-<h2>Smoothies</h2>
+            <h3>
+                Smoothie de fruta
+            </h3>
 
-<p class="seccion-descripcion">
-    Cremosos, frescos y frutales
-</p>
+            <p class="producto-descripcion">
+                Bebida fría y cremosa de fruta.
+            </p>
 
-</div>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    Consultar
+                </span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Smoothie de fruta',0)">
+                    Agregar
+                </button>
 
+            </div>
 
-<div class="decoracion">
-    <span>🍓</span>
-</div>
+        </div>
 
-
-<h3 style="
-    color:var(--marron);
-    margin-bottom:14px;
-    font-size:16px;
-">
-    💧 Con agua
-</h3>
-
-
-<div class="productos">
-
-
-<article class="producto"
-         data-id="smoothie-agua-anana"
-         data-nombre="Smoothie de Ananá con agua"
-         data-precio="5000">
-
-<div class="producto-icono">🍍</div>
-
-<h3>Ananá</h3>
-
-<p>Smoothie con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-agua-frutilla"
-         data-nombre="Smoothie de Frutilla con agua"
-         data-precio="5000">
-
-<div class="producto-icono">🍓</div>
-
-<h3>Frutilla</h3>
-
-<p>Smoothie con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-agua-banana"
-         data-nombre="Smoothie de Banana con agua"
-         data-precio="5000">
-
-<div class="producto-icono">🍌</div>
-
-<h3>Banana</h3>
-
-<p>Smoothie con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-agua-acai"
-         data-nombre="Smoothie de Açaí con agua"
-         data-precio="5500">
-
-<div class="producto-icono">🫐</div>
-
-<h3>Açaí</h3>
-
-<p>Smoothie con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-agua-maracuya"
-         data-nombre="Smoothie de Maracuyá con agua"
-         data-precio="4500">
-
-<div class="producto-icono">🥭</div>
-
-<h3>Maracuyá</h3>
-
-<p>Smoothie con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$4.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-agua-durazno"
-         data-nombre="Smoothie de Durazno con agua"
-         data-precio="5000">
-
-<div class="producto-icono">🍑</div>
-
-<h3>Durazno</h3>
-
-<p>Smoothie con agua.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$5.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-</div>
-
-
-<h3 style="
-    color:var(--marron);
-    margin:30px 0 14px;
-    font-size:16px;
-">
-    🥛 Con leche
-</h3>
-
-
-<div class="productos">
-
-
-<article class="producto"
-         data-id="smoothie-leche-anana"
-         data-nombre="Smoothie de Ananá con leche"
-         data-precio="6500">
-
-<div class="producto-icono">🍍</div>
-
-<h3>Ananá</h3>
-
-<p>Smoothie con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-leche-frutilla"
-         data-nombre="Smoothie de Frutilla con leche"
-         data-precio="6500">
-
-<div class="producto-icono">🍓</div>
-
-<h3>Frutilla</h3>
-
-<p>Smoothie con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-leche-banana"
-         data-nombre="Smoothie de Banana con leche"
-         data-precio="6500">
-
-<div class="producto-icono">🍌</div>
-
-<h3>Banana</h3>
-
-<p>Smoothie con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-leche-acai"
-         data-nombre="Smoothie de Açaí con leche"
-         data-precio="7000">
-
-<div class="producto-icono">🫐</div>
-
-<h3>Açaí</h3>
-
-<p>Smoothie con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$7.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-leche-maracuya"
-         data-nombre="Smoothie de Maracuyá con leche"
-         data-precio="6000">
-
-<div class="producto-icono">🥭</div>
-
-<h3>Maracuyá</h3>
-
-<p>Smoothie con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="smoothie-leche-durazno"
-         data-nombre="Smoothie de Durazno con leche"
-         data-precio="6500">
-
-<div class="producto-icono">🍑</div>
-
-<h3>Durazno</h3>
-
-<p>Smoothie con leche.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$6.500</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-</div>
+    </div>
 
 </section>
+
 
 
 <!-- =====================================================
      MILKSHAKES
 ===================================================== -->
 
-<section class="seccion" id="milkshakes">
+<section
+    class="seccion"
+    id="milkshakes">
 
-<div class="seccion-titulo">
+    <h2 class="titulo-seccion">
+        🥛 Milkshakes
+    </h2>
 
-<div class="titulo-izq">
+    <div class="productos">
 
-<div class="icono-seccion">
-    🥤
-</div>
+        <div class="producto">
 
-<div>
+            <div class="producto-icono">
+                🥛
+            </div>
 
-<h2>Milkshakes</h2>
+            <h3>
+                Milkshake
+            </h3>
 
-<p class="seccion-descripcion">
-    Cremosos y llenos de sabor
-</p>
+            <p class="producto-descripcion">
+                Cremoso y preparado al momento.
+            </p>
 
-</div>
+            <div class="producto-footer">
 
-</div>
+                <span class="precio">
+                    Consultar
+                </span>
 
-</div>
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Milkshake',0)">
+                    Agregar
+                </button>
 
+            </div>
 
-<div class="decoracion">
-    <span>🥤</span>
-</div>
+        </div>
 
-
-<div class="productos">
-
-
-<article class="producto"
-         data-id="milkshake-vainilla"
-         data-nombre="Milkshake de Vainilla"
-         data-precio="8000">
-
-<div class="producto-icono">🍦</div>
-
-<h3>Vainilla</h3>
-
-<p>Milkshake cremoso de vainilla.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$8.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="milkshake-frutilla"
-         data-nombre="Milkshake de Frutilla"
-         data-precio="8000">
-
-<div class="producto-icono">🍓</div>
-
-<h3>Frutilla</h3>
-
-<p>Milkshake cremoso de frutilla.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$8.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-
-<article class="producto"
-         data-id="milkshake-chocolate"
-         data-nombre="Milkshake de Chocolate"
-         data-precio="8000">
-
-<div class="producto-icono">🍫</div>
-
-<h3>Chocolate</h3>
-
-<p>Milkshake intenso de chocolate.</p>
-
-<div class="producto-bottom">
-
-<span class="precio">$8.000</span>
-
-<button class="agregar"
-        onclick="agregarProducto(this)">
-+
-</button>
-
-</div>
-
-</article>
-
-</div>
+    </div>
 
 </section>
+
+
+
+<!-- =====================================================
+     JUGOS
+===================================================== -->
+
+<section
+    class="seccion"
+    id="jugos">
+
+    <h2 class="titulo-seccion">
+        🍊 Jugos
+    </h2>
+
+    <div class="productos">
+
+        <div class="producto">
+
+            <div class="producto-icono">
+                🍊
+            </div>
+
+            <h3>
+                Jugo de naranja
+            </h3>
+
+            <p class="producto-descripcion">
+                Jugo de naranja natural.
+            </p>
+
+            <div class="producto-footer">
+
+                <span class="precio">
+                    $1.500
+                </span>
+
+                <button
+                    class="btn-agregar"
+                    onclick="agregar('Jugo de naranja',1500)">
+                    Agregar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 
 <!-- =====================================================
      CARRITO
 ===================================================== -->
 
-<button class="carrito-flotante"
-        id="carritoFlotante"
-        onclick="abrirCarrito()">
+<div
+    class="carrito"
+    id="carrito">
 
-<span class="carrito-icono">
-    🛒
-</span>
-
-<span class="carrito-texto">
-    Mi pedido
-</span>
-
-<span class="carrito-contador"
-      id="contadorCarrito">
-    0
-</span>
-
-</button>
+    <h2>
+        🛒 Tu pedido
+    </h2>
 
 
-<div class="carrito-overlay"
-     id="carritoOverlay"
-     onclick="cerrarCarrito()">
-</div>
+    <div id="listaCarrito">
+
+        <div class="carrito-vacio">
+            Todavía no agregaste productos.
+        </div>
+
+    </div>
 
 
-<aside class="carrito-panel"
-       id="carritoPanel">
+    <div class="carrito-total">
+
+        <span>
+            Total
+        </span>
+
+        <span
+            class="total-precio"
+            id="total">
+
+            $0
+
+        </span>
+
+    </div>
 
 
-<div class="carrito-header">
+    <div class="datos-pedido">
 
-<div>
+        <label for="mesa">
+            Número de mesa
+        </label>
 
-<span class="carrito-mini-titulo">
-    CAFETERÍA ANITA
-</span>
-
-<h2>
-    Mi pedido
-</h2>
-
-</div>
+        <input
+            id="mesa"
+            type="text"
+            placeholder="Ej: Mesa 3">
 
 
-<button class="cerrar-carrito"
-        onclick="cerrarCarrito()">
-    ×
-</button>
+        <label for="nombre">
+            Nombre
+        </label>
 
-</div>
-
-
-<div class="carrito-items"
-     id="carritoItems">
-
-<div class="carrito-vacio">
-
-<div class="carrito-vacio-icono">
-    ☕
-</div>
-
-<h3>
-    Tu pedido está vacío
-</h3>
-
-<p>
-    Elegí algo rico de nuestra carta.
-</p>
-
-</div>
-
-</div>
+        <input
+            id="nombre"
+            type="text"
+            placeholder="Tu nombre">
 
 
-<div class="carrito-resumen">
+        <label for="comentario">
+            Comentario
+        </label>
 
-<div class="resumen-linea">
+        <textarea
+            id="comentario"
+            placeholder="Ej: Sin azúcar, poca leche, etc."></textarea>
 
-<span>
-    Subtotal
-</span>
 
-<strong id="subtotalCarrito">
-    $0
-</strong>
+        <button
+            class="btn-enviar"
+            onclick="enviarPedido()">
+
+            📲 Enviar pedido por WhatsApp
+
+        </button>
+
+    </div>
 
 </div>
 
 
-<div class="resumen-total">
-
-<span>
-    TOTAL
-</span>
-
-<strong id="totalCarrito">
-    $0
-</strong>
-
-</div>
 
 </div>
 
 
-<div class="datos-pedido">
 
-<h3>
-    Datos del pedido
-</h3>
+<!-- =====================================================
+     BOTONES FLOTANTES
+===================================================== -->
 
-
-<input type="text"
-       id="nombreCliente"
-       placeholder="Tu nombre">
+<div class="botones-flotantes">
 
 
-<select id="tipoPedido">
+    <!-- ENVIAR PEDIDO -->
 
-<option value="">
-    ¿Cómo querés recibir tu pedido?
-</option>
+    <button
+        class="boton-flotante boton-enviar-flotante"
+        onclick="enviarPedido()"
+        aria-label="Enviar pedido por WhatsApp">
 
-<option value="Mesa">
-    🍽️ En el local
-</option>
+        <span class="etiqueta-flotante">
+            Enviar pedido
+        </span>
 
-<option value="Retiro">
-    🛍️ Retiro por el local
-</option>
+        💬
 
-<option value="Delivery">
-    🛵 Delivery
-</option>
-
-</select>
+    </button>
 
 
-<input type="text"
-       id="mesaCliente"
-       placeholder="Número de mesa (si corresponde)">
+    <!-- CARRITO -->
 
+    <button
+        class="boton-flotante boton-carrito"
+        onclick="irAlCarrito()"
+        aria-label="Ver carrito">
 
-<textarea id="observaciones"
-          rows="3"
-          placeholder="Alguna observación para tu pedido..."></textarea>
+        <span class="etiqueta-flotante">
+            Ver carrito
+        </span>
+
+        🛒
+
+        <span
+            class="contador-carrito"
+            id="contador">
+
+            0
+
+        </span>
+
+    </button>
+
 
 </div>
 
-
-<button class="btn-whatsapp"
-        onclick="enviarPedido()">
-
-<span>
-    💬
-</span>
-
-<span>
-    Enviar pedido por WhatsApp
-</span>
-
-</button>
-
-</aside>
 
 
 <!-- =====================================================
      TOAST
 ===================================================== -->
 
-<div class="toast"
-     id="toast">
+<div
+    class="toast"
+    id="toast">
 
-<span>
-    ✓
-</span>
+    <span>
+        ✓
+    </span>
 
-<span id="toastTexto">
-    Producto agregado
-</span>
+    <span id="toastTexto">
+        Producto agregado
+    </span>
 
 </div>
+
 
 
 <!-- =====================================================
      FOOTER
 ===================================================== -->
 
-<footer class="footer">
+<footer>
 
-<div class="footer-logo">
-    ☕
-</div>
+    <strong>
+        Cafetería Anita ☕
+    </strong>
 
-<h2>
-    Cafetería Anita
-</h2>
+    <br><br>
 
-<p>
-    Café, cosas ricas y buenos momentos.
-</p>
-
-<div class="footer-linea"></div>
-
-<small>
-    Carta virtual
-</small>
+    Gracias por elegirnos ❤️
 
 </footer>
 
-
-</div>
 
 
 <!-- =====================================================
@@ -4226,91 +2898,25 @@ body::after {
 
 <script>
 
+
+/* =====================================================
+   CARRITO
+===================================================== */
+
 let carrito = [];
 
 
 /* =====================================================
-   FORMATO DE DINERO
+   AGREGAR
 ===================================================== */
 
-function formatoPrecio(numero) {
-
-    return "$" +
-        Number(numero)
-        .toLocaleString("es-AR");
-
-}
-
-
-/* =====================================================
-   IR A CATEGORÍA
-===================================================== */
-
-function irA(id) {
-
-    const elemento =
-        document.getElementById(id);
-
-    if (!elemento) return;
-
-    const posicion =
-        elemento.getBoundingClientRect().top
-        + window.scrollY
-        - 85;
-
-    window.scrollTo({
-
-        top: posicion,
-
-        behavior: "smooth"
-
-    });
-
-
-    document
-        .querySelectorAll(".nav-btn")
-        .forEach(btn => {
-
-            btn.classList.remove("activo");
-
-        });
-
-
-    const boton =
-        document.querySelector(
-            `.nav-btn[onclick="irA('${id}')"]`
-        );
-
-
-    if (boton) {
-
-        boton.classList.add("activo");
-
-    }
-
-}
-
-
-/* =====================================================
-   AGREGAR PRODUCTO
-===================================================== */
-
-function agregarProducto(boton) {
-
-    const producto =
-        boton.closest(".producto");
-
-    const id =
-        producto.dataset.id;
-
-    const nombre =
-        producto.dataset.nombre;
-
-    const precio =
-        Number(producto.dataset.precio);
+function agregar(nombre, precio) {
 
     const existente =
-        carrito.find(item => item.id === id);
+        carrito.find(
+            item =>
+                item.nombre === nombre
+        );
 
 
     if (existente) {
@@ -4321,13 +2927,14 @@ function agregarProducto(boton) {
 
         carrito.push({
 
-            id: id,
+            nombre:
+                nombre,
 
-            nombre: nombre,
+            precio:
+                precio,
 
-            precio: precio,
-
-            cantidad: 1
+            cantidad:
+                1
 
         });
 
@@ -4336,193 +2943,10 @@ function agregarProducto(boton) {
 
     actualizarCarrito();
 
+
     mostrarToast(
-        nombre + " agregado"
+        nombre + " agregado ✓"
     );
-
-
-    boton.animate(
-
-        [
-            { transform:"scale(1)" },
-            { transform:"scale(.75)" },
-            { transform:"scale(1.15)" },
-            { transform:"scale(1)" }
-        ],
-
-        {
-            duration:400
-        }
-
-    );
-
-}
-
-
-/* =====================================================
-   ACTUALIZAR CARRITO
-===================================================== */
-
-function actualizarCarrito() {
-
-    const contenedor =
-        document.getElementById("carritoItems");
-
-    const contador =
-        document.getElementById("contadorCarrito");
-
-    const subtotalElemento =
-        document.getElementById("subtotalCarrito");
-
-    const totalElemento =
-        document.getElementById("totalCarrito");
-
-
-    contenedor.innerHTML = "";
-
-
-    if (carrito.length === 0) {
-
-        contenedor.appendChild(
-            crearCarritoVacio()
-        );
-
-    } else {
-
-        carrito.forEach(item => {
-
-            contenedor.appendChild(
-                crearItemCarrito(item)
-            );
-
-        });
-
-    }
-
-
-    const cantidadTotal =
-        carrito.reduce(
-            (total,item) =>
-                total + item.cantidad,
-            0
-        );
-
-
-    const total =
-        carrito.reduce(
-            (total,item) =>
-                total +
-                item.precio *
-                item.cantidad,
-            0
-        );
-
-
-    contador.textContent =
-        cantidadTotal;
-
-    subtotalElemento.textContent =
-        formatoPrecio(total);
-
-    totalElemento.textContent =
-        formatoPrecio(total);
-
-}
-
-
-/* =====================================================
-   CARRITO VACÍO
-===================================================== */
-
-function crearCarritoVacio() {
-
-    const div =
-        document.createElement("div");
-
-    div.className =
-        "carrito-vacio";
-
-    div.innerHTML = `
-
-        <div class="carrito-vacio-icono">
-            ☕
-        </div>
-
-        <h3>
-            Tu pedido está vacío
-        </h3>
-
-        <p>
-            Elegí algo rico de nuestra carta.
-        </p>
-
-    `;
-
-    return div;
-
-}
-
-
-/* =====================================================
-   CREAR ITEM
-===================================================== */
-
-function crearItemCarrito(item) {
-
-    const div =
-        document.createElement("div");
-
-    div.className =
-        "carrito-item";
-
-
-    div.innerHTML = `
-
-        <div>
-
-            <div class="carrito-item-nombre">
-                ${item.nombre}
-            </div>
-
-            <div class="carrito-item-precio">
-                ${formatoPrecio(
-                    item.precio *
-                    item.cantidad
-                )}
-            </div>
-
-        </div>
-
-
-        <div class="carrito-controles">
-
-            <button
-                class="cantidad-btn"
-                onclick="cambiarCantidad('${item.id}',-1)">
-                −
-            </button>
-
-            <span class="cantidad">
-                ${item.cantidad}
-            </span>
-
-            <button
-                class="cantidad-btn"
-                onclick="cambiarCantidad('${item.id}',1)">
-                +
-            </button>
-
-            <button
-                class="eliminar-item"
-                onclick="eliminarProducto('${item.id}')">
-                🗑️
-            </button>
-
-        </div>
-
-    `;
-
-    return div;
 
 }
 
@@ -4531,27 +2955,20 @@ function crearItemCarrito(item) {
    CAMBIAR CANTIDAD
 ===================================================== */
 
-function cambiarCantidad(id,cambio) {
+function cambiarCantidad(indice, cambio) {
 
-    const item =
-        carrito.find(
-            producto =>
-                producto.id === id
+    carrito[indice].cantidad +=
+        cambio;
+
+
+    if (
+        carrito[indice].cantidad <= 0
+    ) {
+
+        carrito.splice(
+            indice,
+            1
         );
-
-    if (!item) return;
-
-
-    item.cantidad += cambio;
-
-
-    if (item.cantidad <= 0) {
-
-        carrito =
-            carrito.filter(
-                producto =>
-                    producto.id !== id
-            );
 
     }
 
@@ -4565,16 +2982,16 @@ function cambiarCantidad(id,cambio) {
    ELIMINAR
 ===================================================== */
 
-function eliminarProducto(id) {
+function eliminar(indice) {
 
-    carrito =
-        carrito.filter(
-            item =>
-                item.id !== id
-        );
+    carrito.splice(
+        indice,
+        1
+    );
 
 
     actualizarCarrito();
+
 
     mostrarToast(
         "Producto eliminado"
@@ -4584,244 +3001,357 @@ function eliminarProducto(id) {
 
 
 /* =====================================================
-   ABRIR CARRITO
+   ACTUALIZAR CARRITO
 ===================================================== */
 
-function abrirCarrito() {
+function actualizarCarrito() {
 
-    document
-        .getElementById("carritoPanel")
-        .classList.add("abierto");
-
-    document
-        .getElementById("carritoOverlay")
-        .classList.add("abierto");
-
-    document.body.style.overflow =
-        "hidden";
-
-}
+    const lista =
+        document.getElementById(
+            "listaCarrito"
+        );
 
 
-/* =====================================================
-   CERRAR CARRITO
-===================================================== */
+    const contador =
+        document.getElementById(
+            "contador"
+        );
 
-function cerrarCarrito() {
 
-    document
-        .getElementById("carritoPanel")
-        .classList.remove("abierto");
+    const totalElemento =
+        document.getElementById(
+            "total"
+        );
 
-    document
-        .getElementById("carritoOverlay")
-        .classList.remove("abierto");
 
-    document.body.style.overflow =
+    if (
+        carrito.length === 0
+    ) {
+
+        lista.innerHTML = `
+
+            <div class="carrito-vacio">
+
+                Todavía no agregaste productos.
+
+            </div>
+
+        `;
+
+
+        contador.textContent =
+            "0";
+
+
+        totalElemento.textContent =
+            "$0";
+
+
+        return;
+
+    }
+
+
+    let total =
+        0;
+
+
+    let cantidadTotal =
+        0;
+
+
+    lista.innerHTML =
         "";
 
-}
+
+    carrito.forEach(
+        (item, indice) => {
 
 
-/* =====================================================
-   TOAST
-===================================================== */
-
-let toastTimer;
+            const subtotal =
+                item.precio *
+                item.cantidad;
 
 
-function mostrarToast(texto) {
+            total +=
+                subtotal;
 
-    const toast =
-        document.getElementById("toast");
 
-    const textoElemento =
-        document.getElementById("toastTexto");
+            cantidadTotal +=
+                item.cantidad;
 
-    textoElemento.textContent =
-        texto;
 
-    toast.classList.add(
-        "mostrar"
-    );
+            const div =
+                document.createElement(
+                    "div"
+                );
 
-    clearTimeout(toastTimer);
 
-    toastTimer =
-        setTimeout(() => {
+            div.className =
+                "item-carrito";
 
-            toast.classList.remove(
-                "mostrar"
+
+            div.innerHTML = `
+
+                <div class="item-info">
+
+                    <div class="item-nombre">
+
+                        ${item.nombre}
+
+                    </div>
+
+                    <div class="item-precio">
+
+                        ${formatearPrecio(item.precio)}
+                        c/u
+
+                    </div>
+
+                </div>
+
+
+                <div class="controles">
+
+                    <button
+                        class="btn-cantidad"
+                        onclick="cambiarCantidad(${indice},-1)">
+
+                        −
+
+                    </button>
+
+
+                    <span class="cantidad">
+
+                        ${item.cantidad}
+
+                    </span>
+
+
+                    <button
+                        class="btn-cantidad"
+                        onclick="cambiarCantidad(${indice},1)">
+
+                        +
+
+                    </button>
+
+
+                    <button
+                        class="eliminar-item"
+                        onclick="eliminar(${indice})">
+
+                        🗑️
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(
+                div
             );
 
-        },1800);
+        }
+    );
+
+
+    contador.textContent =
+        cantidadTotal;
+
+
+    totalElemento.textContent =
+        formatearPrecio(total);
 
 }
 
 
 /* =====================================================
-   ENVIAR PEDIDO POR WHATSAPP
+   FORMATEAR PRECIO
+===================================================== */
+
+function formatearPrecio(numero) {
+
+    if (
+        numero === 0
+    ) {
+
+        return "Consultar";
+
+    }
+
+
+    return "$" +
+        numero.toLocaleString(
+            "es-AR"
+        );
+
+}
+
+
+/* =====================================================
+   ENVIAR PEDIDO
 ===================================================== */
 
 function enviarPedido() {
 
-    if (carrito.length === 0) {
+
+    if (
+        carrito.length === 0
+    ) {
 
         mostrarToast(
-            "Primero agregá algún producto"
+            "Agregá productos al pedido"
         );
+
+
+        /* Llevar al carrito */
+
+        setTimeout(
+            irAlCarrito,
+            500
+        );
+
 
         return;
 
     }
-
-
-    const nombre =
-        document
-            .getElementById("nombreCliente")
-            .value
-            .trim();
-
-
-    const tipo =
-        document
-            .getElementById("tipoPedido")
-            .value;
 
 
     const mesa =
-        document
-            .getElementById("mesaCliente")
-            .value
-            .trim();
+        document.getElementById(
+            "mesa"
+        ).value.trim();
 
 
-    const observaciones =
-        document
-            .getElementById("observaciones")
-            .value
-            .trim();
+    const nombre =
+        document.getElementById(
+            "nombre"
+        ).value.trim();
 
 
-    if (!nombre) {
-
-        mostrarToast(
-            "Ingresá tu nombre"
-        );
-
-        document
-            .getElementById("nombreCliente")
-            .focus();
-
-        return;
-
-    }
-
-
-    if (!tipo) {
-
-        mostrarToast(
-            "Elegí cómo recibir tu pedido"
-        );
-
-        document
-            .getElementById("tipoPedido")
-            .focus();
-
-        return;
-
-    }
+    const comentario =
+        document.getElementById(
+            "comentario"
+        ).value.trim();
 
 
     let mensaje =
-        "☕ *NUEVO PEDIDO — CAFETERÍA ANITA*%0A%0A";
-
-
-    mensaje +=
-        "👤 *Cliente:* " +
-        encodeURIComponent(nombre) +
-        "%0A";
-
-
-    mensaje +=
-        "📍 *Pedido:* " +
-        encodeURIComponent(tipo) +
-        "%0A";
+        "☕ *PEDIDO - CAFETERÍA ANITA*%0A%0A";
 
 
     if (mesa) {
 
         mensaje +=
-            "🪑 *Mesa:* " +
-            encodeURIComponent(mesa) +
+            "🪑 Mesa: " +
+            encodeURIComponent(
+                mesa
+            ) +
+            "%0A";
+
+    }
+
+
+    if (nombre) {
+
+        mensaje +=
+            "👤 Nombre: " +
+            encodeURIComponent(
+                nombre
+            ) +
             "%0A";
 
     }
 
 
     mensaje +=
-        "%0A🛒 *PEDIDO:*%0A";
+        "%0A";
 
 
-    carrito.forEach(item => {
-
-        mensaje +=
-            "• " +
-            encodeURIComponent(item.nombre) +
-            " x" +
-            item.cantidad +
-            " — " +
-            encodeURIComponent(
-                formatoPrecio(
-                    item.precio *
-                    item.cantidad
-                )
-            ) +
-            "%0A";
-
-    });
+    let total =
+        0;
 
 
-    const total =
-        carrito.reduce(
-            (suma,item) =>
-                suma +
+    carrito.forEach(
+        item => {
+
+
+            const subtotal =
                 item.precio *
-                item.cantidad,
-            0
-        );
+                item.cantidad;
+
+
+            total +=
+                subtotal;
+
+
+            mensaje +=
+                "• " +
+                encodeURIComponent(
+                    item.nombre
+                ) +
+                " x" +
+                item.cantidad;
+
+
+            if (
+                item.precio > 0
+            ) {
+
+                mensaje +=
+                    " — " +
+                    encodeURIComponent(
+                        formatearPrecio(
+                            subtotal
+                        )
+                    );
+
+            }
+
+
+            mensaje +=
+                "%0A";
+
+        }
+    );
 
 
     mensaje +=
         "%0A💰 *TOTAL: " +
         encodeURIComponent(
-            formatoPrecio(total)
+            formatearPrecio(total)
         ) +
         "*";
 
 
-    if (observaciones) {
+    if (comentario) {
 
         mensaje +=
-            "%0A%0A📝 *Observaciones:*%0A" +
+            "%0A%0A📝 Comentario: " +
             encodeURIComponent(
-                observaciones
+                comentario
             );
 
     }
 
 
-    /*
-       WHATSAPP DE CAFETERÍA ANITA
-    */
+    /* =================================================
+       WHATSAPP
+       
+       REEMPLAZAR ESTE NÚMERO POR EL
+       WHATSAPP REAL DE CAFETERÍA ANITA.
+    ================================================= */
 
-    const telefono =
-        "5493743618225";
+    const numeroWhatsApp =
+        "5490000000000";
 
 
     const url =
         "https://wa.me/" +
-        telefono +
+        numeroWhatsApp +
         "?text=" +
         mensaje;
 
@@ -4835,178 +3365,102 @@ function enviarPedido() {
 
 
 /* =====================================================
-   ANIMACIÓN DE SECCIONES
+   IR A CATEGORÍA
 ===================================================== */
 
-const observadorSecciones =
-    new IntersectionObserver(
+function irA(id) {
 
-        entradas => {
-
-            entradas.forEach(entrada => {
-
-                if (
-                    entrada.isIntersecting
-                ) {
-
-                    entrada.target
-                        .classList
-                        .add("visible");
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold:.08
-        }
-
-    );
-
-
-document
-    .querySelectorAll(".seccion")
-    .forEach(seccion => {
-
-        observadorSecciones.observe(
-            seccion
+    const elemento =
+        document.getElementById(
+            id
         );
+
+
+    if (elemento) {
+
+        elemento.scrollIntoView({
+
+            behavior:
+                "smooth",
+
+            block:
+                "start"
+
+        });
+
+    }
+
+}
+
+
+/* =====================================================
+   IR AL CARRITO
+===================================================== */
+
+function irAlCarrito() {
+
+    const carritoElemento =
+        document.getElementById(
+            "carrito"
+        );
+
+
+    carritoElemento.scrollIntoView({
+
+        behavior:
+            "smooth",
+
+        block:
+            "center"
 
     });
 
+}
+
 
 /* =====================================================
-   ANIMACIÓN DE PRODUCTOS
+   TOAST
 ===================================================== */
 
-const observadorProductos =
-    new IntersectionObserver(
+function mostrarToast(texto) {
 
-        entradas => {
-
-            entradas.forEach(entrada => {
-
-                if (
-                    entrada.isIntersecting
-                ) {
-
-                    entrada.target
-                        .classList
-                        .add("visible");
-
-                    observadorProductos
-                        .unobserve(
-                            entrada.target
-                        );
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold:.08
-        }
-
-    );
-
-
-document
-    .querySelectorAll(".producto")
-    .forEach((producto,indice) => {
-
-        producto.style.transitionDelay =
-            (indice % 6) * 70 + "ms";
-
-        observadorProductos.observe(
-            producto
+    const toast =
+        document.getElementById(
+            "toast"
         );
 
-    });
+
+    const toastTexto =
+        document.getElementById(
+            "toastTexto"
+        );
 
 
-/* =====================================================
-   CAMBIO AUTOMÁTICO DE CATEGORÍA
-===================================================== */
+    toastTexto.textContent =
+        texto;
 
-const secciones =
-    document.querySelectorAll(
-        ".seccion"
+
+    toast.classList.add(
+        "mostrar"
     );
 
 
-const botonesNav =
-    document.querySelectorAll(
-        ".nav-btn"
-    );
+    setTimeout(
+        () => {
 
-
-const observadorNav =
-    new IntersectionObserver(
-
-        entradas => {
-
-            entradas.forEach(entrada => {
-
-                if (
-                    entrada.isIntersecting
-                ) {
-
-                    botonesNav
-                        .forEach(btn => {
-
-                            btn.classList
-                                .remove("activo");
-
-                        });
-
-
-                    const boton =
-                        document.querySelector(
-                            `.nav-btn[onclick="irA('${entrada.target.id}')"]`
-                        );
-
-
-                    if (boton) {
-
-                        boton.classList
-                            .add("activo");
-
-                    }
-
-                }
-
-            });
+            toast.classList.remove(
+                "mostrar"
+            );
 
         },
-
-        {
-            rootMargin:
-                "-35% 0px -55% 0px"
-        }
-
+        1800
     );
 
+}
 
-secciones.forEach(seccion => {
-
-    observadorNav.observe(
-        seccion
-    );
-
-});
-
-
-/* =====================================================
-   INICIO
-===================================================== */
-
-actualizarCarrito();
 
 </script>
+
 
 </body>
 
