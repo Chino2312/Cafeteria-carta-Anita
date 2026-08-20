@@ -65,10 +65,6 @@ html {
 }
 
 
-/* =====================================================
-   BODY
-===================================================== */
-
 body {
 
     font-family:
@@ -105,10 +101,6 @@ body {
 
 }
 
-
-/* =====================================================
-   EFECTO DE FONDO
-===================================================== */
 
 body::before {
 
@@ -179,10 +171,6 @@ header {
 }
 
 
-/* =====================================================
-   LOGO
-===================================================== */
-
 .logo {
 
     width:
@@ -221,10 +209,6 @@ header {
 }
 
 
-/* =====================================================
-   TITULO
-===================================================== */
-
 header h1 {
 
     font-family:
@@ -232,11 +216,7 @@ header h1 {
         serif;
 
     font-size:
-        clamp(
-            30px,
-            7vw,
-            48px
-        );
+        clamp(30px, 7vw, 48px);
 
     letter-spacing:
         1px;
@@ -289,10 +269,10 @@ nav {
         50;
 
     background:
-        rgba(38,53,43,.94);
+        rgba(38,53,43,.20);
 
     backdrop-filter:
-        blur(10px);
+        blur(8px);
 
     animation:
         aparecer .8s ease both;
@@ -300,9 +280,24 @@ nav {
 }
 
 
-/* =====================================================
-   BOTONES NAVEGACIÓN
-===================================================== */
+nav::-webkit-scrollbar {
+
+    height:
+        4px;
+
+}
+
+
+nav::-webkit-scrollbar-thumb {
+
+    background:
+        var(--crema);
+
+    border-radius:
+        20px;
+
+}
+
 
 .nav-btn {
 
@@ -331,12 +326,30 @@ nav {
         pointer;
 
     box-shadow:
-        0 4px 12px rgba(0,0,0,.18);
+        0 5px 15px rgba(0,0,0,.22);
 
     transition:
         transform .25s ease,
         background .25s ease,
         box-shadow .25s ease;
+
+}
+
+
+.nav-btn.activo {
+
+    background:
+        var(--verde-claro);
+
+    color:
+        white;
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 7px 18px rgba(0,0,0,.28);
 
 }
 
@@ -371,7 +384,7 @@ nav {
         28px 0 38px;
 
     scroll-margin-top:
-        80px;
+        90px;
 
     animation:
         aparecerSeccion .8s ease both;
@@ -428,7 +441,7 @@ nav {
 
 
 /* =====================================================
-   TARJETA
+   TARJETAS
 ===================================================== */
 
 .producto {
@@ -455,8 +468,6 @@ nav {
 }
 
 
-/* Movimiento al pasar/tocar */
-
 .producto:hover {
 
     transform:
@@ -468,10 +479,6 @@ nav {
 
 }
 
-
-/* =====================================================
-   ICONO PRODUCTO
-===================================================== */
 
 .producto-icono {
 
@@ -496,10 +503,6 @@ nav {
 }
 
 
-/* =====================================================
-   TITULO PRODUCTO
-===================================================== */
-
 .producto h3 {
 
     color:
@@ -515,10 +518,6 @@ nav {
 }
 
 
-/* =====================================================
-   DESCRIPCIÓN
-===================================================== */
-
 .producto-descripcion {
 
     color:
@@ -532,10 +531,6 @@ nav {
 
 }
 
-
-/* =====================================================
-   FOOTER PRODUCTO
-===================================================== */
 
 .producto-footer {
 
@@ -551,12 +546,11 @@ nav {
     gap:
         10px;
 
+    margin-top:
+        12px;
+
 }
 
-
-/* =====================================================
-   PRECIO
-===================================================== */
 
 .precio {
 
@@ -571,10 +565,6 @@ nav {
 
 }
 
-
-/* =====================================================
-   AGREGAR
-===================================================== */
 
 .btn-agregar {
 
@@ -650,8 +640,8 @@ nav {
     box-shadow:
         0 15px 40px rgba(0,0,0,.25);
 
-    animation:
-        aparecerSeccion .8s ease both;
+    scroll-margin-top:
+        90px;
 
 }
 
@@ -899,7 +889,7 @@ nav {
 
 
 /* =====================================================
-   DATOS PEDIDO
+   DATOS DEL PEDIDO
 ===================================================== */
 
 .datos-pedido {
@@ -979,7 +969,7 @@ nav {
 
 
 /* =====================================================
-   BOTÓN ENVIAR DENTRO DEL CARRITO
+   BOTÓN WHATSAPP
 ===================================================== */
 
 .btn-enviar {
@@ -1076,10 +1066,6 @@ nav {
 }
 
 
-/* =====================================================
-   GLOBITO FLOTANTE
-===================================================== */
-
 .boton-flotante {
 
     position:
@@ -1125,10 +1111,6 @@ nav {
 }
 
 
-/* =====================================================
-   BOTÓN CARRITO
-===================================================== */
-
 .boton-carrito {
 
     background:
@@ -1136,10 +1118,6 @@ nav {
 
 }
 
-
-/* =====================================================
-   BOTÓN WHATSAPP
-===================================================== */
 
 .boton-enviar-flotante {
 
@@ -1151,10 +1129,6 @@ nav {
 
 }
 
-
-/* =====================================================
-   HOVER FLOTANTES
-===================================================== */
 
 .boton-flotante:hover {
 
@@ -1176,7 +1150,7 @@ nav {
 
 
 /* =====================================================
-   ETIQUETA FLOTANTE
+   ETIQUETA
 ===================================================== */
 
 .etiqueta-flotante {
@@ -1223,8 +1197,7 @@ nav {
 }
 
 
-.boton-flotante:hover
-.etiqueta-flotante {
+.boton-flotante:hover .etiqueta-flotante {
 
     opacity:
         1;
@@ -1370,9 +1343,6 @@ footer {
 
     font-size:
         13px;
-
-    animation:
-        aparecer .8s ease both;
 
 }
 
@@ -1667,6 +1637,22 @@ footer strong {
 
     }
 
+
+    .item-carrito {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .controles {
+
+        flex-shrink:
+            0;
+
+    }
+
 }
 
 
@@ -1683,7 +1669,7 @@ footer strong {
 
 
 /* =====================================================
-   RESPETAR REDUCCIÓN DE MOVIMIENTO
+   REDUCIR MOVIMIENTO
 ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1749,53 +1735,45 @@ footer strong {
      NAVEGACIÓN
 ===================================================== -->
 
-<nav>
+<nav id="navegacion">
 
-    <button
-        class="nav-btn"
-        onclick="irA('cafes')">
+    <button class="nav-btn" onclick="irA('cafes')">
         ☕ Cafés
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('matcha')">
+    <button class="nav-btn" onclick="irA('matcha')">
         🍵 Matcha
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('dulces')">
+    <button class="nav-btn" onclick="irA('dulces')">
         🥐 Dulces
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('salados')">
+    <button class="nav-btn" onclick="irA('salados')">
         🧀 Salados
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('licuados')">
+    <button class="nav-btn" onclick="irA('licuados-agua')">
         🥤 Licuados
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('smoothies')">
+    <button class="nav-btn" onclick="irA('licuados-leche')">
+        🥛 Licuados con leche
+    </button>
+
+    <button class="nav-btn" onclick="irA('smoothies-agua')">
         🍓 Smoothies
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('milkshakes')">
-        🥛 Milkshakes
+    <button class="nav-btn" onclick="irA('smoothies-leche')">
+        🍓 Smoothies con leche
     </button>
 
-    <button
-        class="nav-btn"
-        onclick="irA('jugos')">
+    <button class="nav-btn" onclick="irA('milkshakes')">
+        🥤 Milkshakes
+    </button>
+
+    <button class="nav-btn" onclick="irA('jugos')">
         🍊 Jugos
     </button>
 
@@ -1807,9 +1785,7 @@ footer strong {
      CAFÉS
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="cafes">
+<section class="seccion" id="cafes">
 
     <h2 class="titulo-seccion">
         ☕ Cafés
@@ -1818,164 +1794,92 @@ footer strong {
     <div class="productos">
 
         <div class="producto">
-
             <div class="producto-icono">☕</div>
-
             <h3>Espresso</h3>
 
-            <p class="producto-descripcion">
-                Café intenso y aromático.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$2.500</span>
 
-                <span class="precio">
-                    $2.500
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Espresso',2500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Espresso',2500)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">☕</div>
-
             <h3>Americano</h3>
 
-            <p class="producto-descripcion">
-                Espresso con agua caliente.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$3.000</span>
 
-                <span class="precio">
-                    $3.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Americano',3000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Americano',3000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥛</div>
-
             <h3>Café con leche</h3>
 
-            <p class="producto-descripcion">
-                Café espresso con leche.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$4.000</span>
 
-                <span class="precio">
-                    $4.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Café con leche',4000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Café con leche',4000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">☕</div>
-
             <h3>Cappuccino</h3>
 
-            <p class="producto-descripcion">
-                Café, leche y espuma.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$5.000</span>
 
-                <span class="precio">
-                    $5.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Cappuccino',5000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Cappuccino',5000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">☕</div>
-
             <h3>Latte</h3>
 
-            <p class="producto-descripcion">
-                Espresso suave con leche.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$5.000</span>
 
-                <span class="precio">
-                    $5.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Latte',5000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Latte',5000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍫</div>
-
             <h3>Mocha</h3>
 
-            <p class="producto-descripcion">
-                Café con chocolate y leche.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$6.500</span>
 
-                <span class="precio">
-                    $6.500
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Mocha',6500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Mocha',6500)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
     </div>
@@ -1988,9 +1892,7 @@ footer strong {
      MATCHA
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="matcha">
+<section class="seccion" id="matcha">
 
     <h2 class="titulo-seccion">
         🍵 Matcha
@@ -2006,19 +1908,14 @@ footer strong {
                 Matcha latte frío con frutilla
             </h3>
 
-            <p class="producto-descripcion">
-                Matcha, leche y frutilla.
-            </p>
-
             <div class="producto-footer">
 
                 <span class="precio">
-                    $7.000
+                    $8.000
                 </span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Matcha latte frío con frutilla',7000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Matcha latte frío con frutilla',8000)">
                     Agregar
                 </button>
 
@@ -2035,19 +1932,14 @@ footer strong {
                 Matcha frío con café
             </h3>
 
-            <p class="producto-descripcion">
-                Matcha, leche y café.
-            </p>
-
             <div class="producto-footer">
 
                 <span class="precio">
-                    $7.500
+                    $7.000
                 </span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Matcha frío con café',7500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Matcha frío con café',7000)">
                     Agregar
                 </button>
 
@@ -2058,15 +1950,11 @@ footer strong {
 
         <div class="producto">
 
-            <div class="producto-icono">🍵</div>
+            <div class="producto-icono">🥛</div>
 
             <h3>
                 Matcha solo con leche
             </h3>
-
-            <p class="producto-descripcion">
-                Matcha preparado con leche.
-            </p>
 
             <div class="producto-footer">
 
@@ -2074,9 +1962,8 @@ footer strong {
                     $6.000
                 </span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Matcha solo con leche',6000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Matcha solo con leche',6000)">
                     Agregar
                 </button>
 
@@ -2094,9 +1981,7 @@ footer strong {
      DULCES
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="dulces">
+<section class="seccion" id="dulces">
 
     <h2 class="titulo-seccion">
         🥐 Dulces
@@ -2104,175 +1989,139 @@ footer strong {
 
     <div class="productos">
 
+
         <div class="producto">
-
             <div class="producto-icono">🥐</div>
-
             <h3>Medialuna</h3>
 
             <div class="producto-footer">
-
                 <span class="precio">$900</span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Medialuna',900)">
+                <button class="btn-agregar"
+                        onclick="agregar('Medialuna',900)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥧</div>
-
             <h3>Mini frolita</h3>
 
             <div class="producto-footer">
-
                 <span class="precio">$3.500</span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Mini frolita',3500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Mini frolita',3500)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍩</div>
-
             <h3>Churros</h3>
 
-            <p class="producto-descripcion">
-                Precio por unidad.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$1.000 c/u</span>
 
-                <span class="precio">$1.000</span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Churro',1000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Churros',1000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥧</div>
-
             <h3>Pastafrola</h3>
 
             <div class="producto-footer">
-
                 <span class="precio">$2.500</span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Pastafrola',2500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Pastafrola',2500)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍪</div>
-
             <h3>Alfajor de Maizena</h3>
 
             <div class="producto-footer">
+                <span class="precio">$800 c/u</span>
 
-                <span class="precio">$500</span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Alfajor de Maizena',500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Alfajor de Maizena',800)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍪</div>
-
             <h3>Cookie</h3>
 
             <div class="producto-footer">
+                <span class="precio">$1.000</span>
 
-                <span class="precio">$500</span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Cookie',500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Cookie',1000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍫</div>
-
             <h3>Brownie</h3>
 
             <div class="producto-footer">
+                <span class="precio">$3.000 la porción</span>
 
-                <span class="precio">$3.000</span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Brownie',3000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Brownie',3000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥧</div>
-
             <h3>Tartita</h3>
 
             <div class="producto-footer">
-
                 <span class="precio">$3.500</span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Tartita',3500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Tartita',3500)">
                     Agregar
                 </button>
-
             </div>
+        </div>
 
+
+        <div class="producto">
+            <div class="producto-icono">🥖</div>
+            <h3>Mini pan cuca</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$2.500 c/u</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Mini pan cuca',2500)">
+                    Agregar
+                </button>
+            </div>
         </div>
 
     </div>
@@ -2285,9 +2134,7 @@ footer strong {
      SALADOS
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="salados">
+<section class="seccion" id="salados">
 
     <h2 class="titulo-seccion">
         🧀 Salados
@@ -2295,218 +2142,109 @@ footer strong {
 
     <div class="productos">
 
+
         <div class="producto">
-
             <div class="producto-icono">🧀</div>
-
             <h3>Chipitas</h3>
 
-            <p class="producto-descripcion">
-                Precio por 100 g.
-            </p>
-
             <div class="producto-footer">
+                <span class="precio">$1.000 / 100 g</span>
 
-                <span class="precio">
-                    $1.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Chipitas 100 g',1000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Chipitas 100 g',1000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍕</div>
-
             <h3>Mini pizzeta</h3>
 
             <div class="producto-footer">
+                <span class="precio">$3.000</span>
 
-                <span class="precio">
-                    $3.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Mini pizzeta',3000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Mini pizzeta',3000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
-            <div class="producto-icono">🥖</div>
-
-            <h3>Mini pan cuca</h3>
-
-            <div class="producto-footer">
-
-                <span class="precio">
-                    $2.500
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Mini pan cuca',2500)">
-                    Agregar
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="producto">
-
             <div class="producto-icono">🍞</div>
-
-            <h3>Tostadas simples</h3>
+            <h3>Tostada solo</h3>
 
             <div class="producto-footer">
+                <span class="precio">$2.000</span>
 
-                <span class="precio">
-                    $2.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Tostadas simples',2000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Tostada solo',2000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🍳</div>
-
             <h3>Tostadas de huevo</h3>
 
             <div class="producto-footer">
+                <span class="precio">$3.000</span>
 
-                <span class="precio">
-                    $3.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Tostadas de huevo',3000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Tostadas de huevo',3000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥪</div>
-
-            <h3>Tostada jamón y queso</h3>
+            <h3>Tostada de jamón y queso</h3>
 
             <div class="producto-footer">
+                <span class="precio">$4.000</span>
 
-                <span class="precio">
-                    $4.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Tostada jamón y queso',4000)">
+                <button class="btn-agregar"
+                        onclick="agregar('Tostada de jamón y queso',4000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥪</div>
-
             <h3>Sándwich de chipa</h3>
 
             <div class="producto-footer">
+                <span class="precio">$7.000</span>
 
-                <span class="precio">
-                    $6.500
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Sándwich de chipa',6500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Sándwich de chipa',7000)">
                     Agregar
                 </button>
-
             </div>
-
         </div>
 
 
         <div class="producto">
-
             <div class="producto-icono">🥖</div>
-
-            <h3>Criollitos</h3>
-
-            <p class="producto-descripcion">
-                Precio por 100 g.
-            </p>
+            <h3>Criollitos de queso</h3>
 
             <div class="producto-footer">
+                <span class="precio">$1.400 / 100 g</span>
 
-                <span class="precio">
-                    $1.400
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Criollitos 100 g',1400)">
+                <button class="btn-agregar"
+                        onclick="agregar('Criollitos 100 g',1400)">
                     Agregar
                 </button>
-
             </div>
-
-        </div>
-
-
-        <div class="producto">
-
-            <div class="producto-icono">🧀</div>
-
-            <h3>Mbeyú</h3>
-
-            <div class="producto-footer">
-
-                <span class="precio">
-                    $3.000
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Mbeyú',3000)">
-                    Agregar
-                </button>
-
-            </div>
-
         </div>
 
     </div>
@@ -2516,47 +2254,104 @@ footer strong {
 
 
 <!-- =====================================================
-     LICUADOS
+     LICUADOS CON AGUA
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="licuados">
+<section class="seccion" id="licuados-agua">
 
     <h2 class="titulo-seccion">
-        🥤 Licuados
+        🥤 Licuados con agua
     </h2>
 
     <div class="productos">
 
         <div class="producto">
-
-            <div class="producto-icono">
-                🍓
-            </div>
-
-            <h3>
-                Licuado de fruta
-            </h3>
-
-            <p class="producto-descripcion">
-                Fruta fresca con leche.
-            </p>
+            <div class="producto-icono">🍍</div>
+            <h3>Ananá</h3>
 
             <div class="producto-footer">
+                <span class="precio">$4.500</span>
 
-                <span class="precio">
-                    $12.500
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Licuado de fruta',12500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con agua - Ananá',4500)">
                     Agregar
                 </button>
-
             </div>
+        </div>
 
+
+        <div class="producto">
+            <div class="producto-icono">🍓</div>
+            <h3>Frutilla</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$4.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con agua - Frutilla',4500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍌</div>
+            <h3>Banana</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$4.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con agua - Banana',4500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🫐</div>
+            <h3>Açaí</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$4.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con agua - Açaí',4000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🥭</div>
+            <h3>Maracuyá</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$4.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con agua - Maracuyá',4000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍑</div>
+            <h3>Durazno</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$4.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con agua - Durazno',4500)">
+                    Agregar
+                </button>
+            </div>
         </div>
 
     </div>
@@ -2566,47 +2361,318 @@ footer strong {
 
 
 <!-- =====================================================
-     SMOOTHIES
+     LICUADOS CON LECHE
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="smoothies">
+<section class="seccion" id="licuados-leche">
 
     <h2 class="titulo-seccion">
-        🍓 Smoothies
+        🥛 Licuados con leche
     </h2>
 
     <div class="productos">
 
         <div class="producto">
-
-            <div class="producto-icono">
-                🍓
-            </div>
-
-            <h3>
-                Smoothie de fruta
-            </h3>
-
-            <p class="producto-descripcion">
-                Bebida fría y cremosa de fruta.
-            </p>
+            <div class="producto-icono">🍍</div>
+            <h3>Ananá</h3>
 
             <div class="producto-footer">
+                <span class="precio">$6.000</span>
 
-                <span class="precio">
-                    Consultar
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Smoothie de fruta',0)">
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con leche - Ananá',6000)">
                     Agregar
                 </button>
-
             </div>
+        </div>
 
+
+        <div class="producto">
+            <div class="producto-icono">🍓</div>
+            <h3>Frutilla</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con leche - Frutilla',6000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍌</div>
+            <h3>Banana</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con leche - Banana',6000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🫐</div>
+            <h3>Açaí</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con leche - Açaí',6500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🥭</div>
+            <h3>Maracuyá</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$5.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con leche - Maracuyá',5500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍑</div>
+            <h3>Durazno</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Licuado con leche - Durazno',6000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SMOOTHIES CON AGUA
+===================================================== -->
+
+<section class="seccion" id="smoothies-agua">
+
+    <h2 class="titulo-seccion">
+        🍓 Smoothies con agua
+    </h2>
+
+    <div class="productos">
+
+        <div class="producto">
+            <div class="producto-icono">🍍</div>
+            <h3>Ananá</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$5.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con agua - Ananá',5000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍓</div>
+            <h3>Frutilla</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$5.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con agua - Frutilla',5000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍌</div>
+            <h3>Banana</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$5.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con agua - Banana',5000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🫐</div>
+            <h3>Açaí</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$5.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con agua - Açaí',5500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🥭</div>
+            <h3>Maracuyá</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$4.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con agua - Maracuyá',4500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍑</div>
+            <h3>Durazno</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$5.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con agua - Durazno',5000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SMOOTHIES CON LECHE
+===================================================== -->
+
+<section class="seccion" id="smoothies-leche">
+
+    <h2 class="titulo-seccion">
+        🍓 Smoothies con leche
+    </h2>
+
+    <div class="productos">
+
+        <div class="producto">
+            <div class="producto-icono">🍍</div>
+            <h3>Ananá</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con leche - Ananá',6500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍓</div>
+            <h3>Frutilla</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con leche - Frutilla',6500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍌</div>
+            <h3>Banana</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con leche - Banana',6500)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🫐</div>
+            <h3>Açaí</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$7.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con leche - Açaí',7000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🥭</div>
+            <h3>Maracuyá</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con leche - Maracuyá',6000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍑</div>
+            <h3>Durazno</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$6.500</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Smoothie con leche - Durazno',6500)">
+                    Agregar
+                </button>
+            </div>
         </div>
 
     </div>
@@ -2619,44 +2685,56 @@ footer strong {
      MILKSHAKES
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="milkshakes">
+<section class="seccion" id="milkshakes">
 
     <h2 class="titulo-seccion">
-        🥛 Milkshakes
+        🥤 Milkshakes
     </h2>
 
     <div class="productos">
 
         <div class="producto">
-
-            <div class="producto-icono">
-                🥛
-            </div>
-
-            <h3>
-                Milkshake
-            </h3>
-
-            <p class="producto-descripcion">
-                Cremoso y preparado al momento.
-            </p>
+            <div class="producto-icono">🍦</div>
+            <h3>Vainilla</h3>
 
             <div class="producto-footer">
+                <span class="precio">$8.000</span>
 
-                <span class="precio">
-                    Consultar
-                </span>
-
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Milkshake',0)">
+                <button class="btn-agregar"
+                        onclick="agregar('Milkshake de Vainilla',8000)">
                     Agregar
                 </button>
-
             </div>
+        </div>
 
+
+        <div class="producto">
+            <div class="producto-icono">🍓</div>
+            <h3>Frutilla</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$8.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Milkshake de Frutilla',8000)">
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+
+        <div class="producto">
+            <div class="producto-icono">🍫</div>
+            <h3>Chocolate</h3>
+
+            <div class="producto-footer">
+                <span class="precio">$8.000</span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Milkshake de Chocolate',8000)">
+                    Agregar
+                </button>
+            </div>
         </div>
 
     </div>
@@ -2669,9 +2747,7 @@ footer strong {
      JUGOS
 ===================================================== -->
 
-<section
-    class="seccion"
-    id="jugos">
+<section class="seccion" id="jugos">
 
     <h2 class="titulo-seccion">
         🍊 Jugos
@@ -2689,19 +2765,40 @@ footer strong {
                 Jugo de naranja
             </h3>
 
-            <p class="producto-descripcion">
-                Jugo de naranja natural.
-            </p>
+            <div class="producto-footer">
+
+                <span class="precio">
+                    Consultar
+                </span>
+
+                <button class="btn-agregar"
+                        onclick="agregar('Jugo de naranja',0)">
+                    Agregar
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="producto">
+
+            <div class="producto-icono">
+                🍋
+            </div>
+
+            <h3>
+                Limonada
+            </h3>
 
             <div class="producto-footer">
 
                 <span class="precio">
-                    $1.500
+                    Consultar
                 </span>
 
-                <button
-                    class="btn-agregar"
-                    onclick="agregar('Jugo de naranja',1500)">
+                <button class="btn-agregar"
+                        onclick="agregar('Limonada',0)">
                     Agregar
                 </button>
 
@@ -2719,9 +2816,7 @@ footer strong {
      CARRITO
 ===================================================== -->
 
-<div
-    class="carrito"
-    id="carrito">
+<div class="carrito" id="carrito">
 
     <h2>
         🛒 Tu pedido
@@ -2743,12 +2838,8 @@ footer strong {
             Total
         </span>
 
-        <span
-            class="total-precio"
-            id="total">
-
+        <span class="total-precio" id="total">
             $0
-
         </span>
 
     </div>
@@ -2798,7 +2889,6 @@ footer strong {
 </div>
 
 
-
 </div>
 
 
@@ -2808,9 +2898,6 @@ footer strong {
 ===================================================== -->
 
 <div class="botones-flotantes">
-
-
-    <!-- ENVIAR PEDIDO -->
 
     <button
         class="boton-flotante boton-enviar-flotante"
@@ -2825,8 +2912,6 @@ footer strong {
 
     </button>
 
-
-    <!-- CARRITO -->
 
     <button
         class="boton-flotante boton-carrito"
@@ -2848,7 +2933,6 @@ footer strong {
         </span>
 
     </button>
-
 
 </div>
 
@@ -2898,7 +2982,6 @@ footer strong {
 
 <script>
 
-
 /* =====================================================
    CARRITO
 ===================================================== */
@@ -2907,16 +2990,14 @@ let carrito = [];
 
 
 /* =====================================================
-   AGREGAR
+   AGREGAR PRODUCTO
 ===================================================== */
 
 function agregar(nombre, precio) {
 
-    const existente =
-        carrito.find(
-            item =>
-                item.nombre === nombre
-        );
+    const existente = carrito.find(
+        item => item.nombre === nombre
+    );
 
 
     if (existente) {
@@ -2927,14 +3008,11 @@ function agregar(nombre, precio) {
 
         carrito.push({
 
-            nombre:
-                nombre,
+            nombre: nombre,
 
-            precio:
-                precio,
+            precio: precio,
 
-            cantidad:
-                1
+            cantidad: 1
 
         });
 
@@ -2957,18 +3035,17 @@ function agregar(nombre, precio) {
 
 function cambiarCantidad(indice, cambio) {
 
-    carrito[indice].cantidad +=
-        cambio;
+    if (!carrito[indice]) {
+        return;
+    }
 
 
-    if (
-        carrito[indice].cantidad <= 0
-    ) {
+    carrito[indice].cantidad += cambio;
 
-        carrito.splice(
-            indice,
-            1
-        );
+
+    if (carrito[indice].cantidad <= 0) {
+
+        carrito.splice(indice, 1);
 
     }
 
@@ -2979,15 +3056,17 @@ function cambiarCantidad(indice, cambio) {
 
 
 /* =====================================================
-   ELIMINAR
+   ELIMINAR PRODUCTO
 ===================================================== */
 
 function eliminar(indice) {
 
-    carrito.splice(
-        indice,
-        1
-    );
+    if (!carrito[indice]) {
+        return;
+    }
+
+
+    carrito.splice(indice, 1);
 
 
     actualizarCarrito();
@@ -3001,32 +3080,46 @@ function eliminar(indice) {
 
 
 /* =====================================================
+   FORMATEAR PRECIO
+===================================================== */
+
+function formatearPrecio(numero) {
+
+    if (numero === 0) {
+
+        return "Consultar";
+
+    }
+
+
+    return "$" +
+        Number(numero).toLocaleString("es-AR");
+
+}
+
+
+/* =====================================================
    ACTUALIZAR CARRITO
 ===================================================== */
 
 function actualizarCarrito() {
 
     const lista =
-        document.getElementById(
-            "listaCarrito"
-        );
-
+        document.getElementById("listaCarrito");
 
     const contador =
-        document.getElementById(
-            "contador"
-        );
-
+        document.getElementById("contador");
 
     const totalElemento =
-        document.getElementById(
-            "total"
-        );
+        document.getElementById("total");
 
 
-    if (
-        carrito.length === 0
-    ) {
+    if (!lista || !contador || !totalElemento) {
+        return;
+    }
+
+
+    if (carrito.length === 0) {
 
         lista.innerHTML = `
 
@@ -3039,52 +3132,39 @@ function actualizarCarrito() {
         `;
 
 
-        contador.textContent =
-            "0";
+        contador.textContent = "0";
 
-
-        totalElemento.textContent =
-            "$0";
-
+        totalElemento.textContent = "$0";
 
         return;
 
     }
 
 
-    let total =
-        0;
+    let total = 0;
+
+    let cantidadTotal = 0;
 
 
-    let cantidadTotal =
-        0;
-
-
-    lista.innerHTML =
-        "";
+    lista.innerHTML = "";
 
 
     carrito.forEach(
         (item, indice) => {
-
 
             const subtotal =
                 item.precio *
                 item.cantidad;
 
 
-            total +=
-                subtotal;
-
+            total += subtotal;
 
             cantidadTotal +=
                 item.cantidad;
 
 
             const div =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
 
             div.className =
@@ -3115,7 +3195,8 @@ function actualizarCarrito() {
 
                     <button
                         class="btn-cantidad"
-                        onclick="cambiarCantidad(${indice},-1)">
+                        onclick="cambiarCantidad(${indice},-1)"
+                        aria-label="Disminuir cantidad">
 
                         −
 
@@ -3131,7 +3212,8 @@ function actualizarCarrito() {
 
                     <button
                         class="btn-cantidad"
-                        onclick="cambiarCantidad(${indice},1)">
+                        onclick="cambiarCantidad(${indice},1)"
+                        aria-label="Aumentar cantidad">
 
                         +
 
@@ -3140,7 +3222,8 @@ function actualizarCarrito() {
 
                     <button
                         class="eliminar-item"
-                        onclick="eliminar(${indice})">
+                        onclick="eliminar(${indice})"
+                        aria-label="Eliminar producto">
 
                         🗑️
 
@@ -3151,9 +3234,7 @@ function actualizarCarrito() {
             `;
 
 
-            lista.appendChild(
-                div
-            );
+            lista.appendChild(div);
 
         }
     );
@@ -3170,45 +3251,17 @@ function actualizarCarrito() {
 
 
 /* =====================================================
-   FORMATEAR PRECIO
-===================================================== */
-
-function formatearPrecio(numero) {
-
-    if (
-        numero === 0
-    ) {
-
-        return "Consultar";
-
-    }
-
-
-    return "$" +
-        numero.toLocaleString(
-            "es-AR"
-        );
-
-}
-
-
-/* =====================================================
-   ENVIAR PEDIDO
+   ENVIAR PEDIDO POR WHATSAPP
 ===================================================== */
 
 function enviarPedido() {
 
-
-    if (
-        carrito.length === 0
-    ) {
+    if (carrito.length === 0) {
 
         mostrarToast(
             "Agregá productos al pedido"
         );
 
-
-        /* Llevar al carrito */
 
         setTimeout(
             irAlCarrito,
@@ -3222,35 +3275,36 @@ function enviarPedido() {
 
 
     const mesa =
-        document.getElementById(
-            "mesa"
-        ).value.trim();
+        document
+            .getElementById("mesa")
+            .value
+            .trim();
 
 
     const nombre =
-        document.getElementById(
-            "nombre"
-        ).value.trim();
+        document
+            .getElementById("nombre")
+            .value
+            .trim();
 
 
     const comentario =
-        document.getElementById(
-            "comentario"
-        ).value.trim();
+        document
+            .getElementById("comentario")
+            .value
+            .trim();
 
 
     let mensaje =
-        "☕ *PEDIDO - CAFETERÍA ANITA*%0A%0A";
+        "☕ *PEDIDO - CAFETERÍA ANITA*\n\n";
 
 
     if (mesa) {
 
         mensaje +=
             "🪑 Mesa: " +
-            encodeURIComponent(
-                mesa
-            ) +
-            "%0A";
+            mesa +
+            "\n";
 
     }
 
@@ -3259,101 +3313,91 @@ function enviarPedido() {
 
         mensaje +=
             "👤 Nombre: " +
-            encodeURIComponent(
-                nombre
-            ) +
-            "%0A";
+            nombre +
+            "\n";
 
     }
 
 
     mensaje +=
-        "%0A";
+        "\n";
 
 
-    let total =
-        0;
+    let total = 0;
 
 
-    carrito.forEach(
-        item => {
+    carrito.forEach(item => {
+
+        const subtotal =
+            item.precio *
+            item.cantidad;
 
 
-            const subtotal =
-                item.precio *
-                item.cantidad;
+        total += subtotal;
 
 
-            total +=
-                subtotal;
+        mensaje +=
+            "• " +
+            item.nombre +
+            " x" +
+            item.cantidad;
 
 
-            mensaje +=
-                "• " +
-                encodeURIComponent(
-                    item.nombre
-                ) +
-                " x" +
-                item.cantidad;
-
-
-            if (
-                item.precio > 0
-            ) {
-
-                mensaje +=
-                    " — " +
-                    encodeURIComponent(
-                        formatearPrecio(
-                            subtotal
-                        )
-                    );
-
-            }
-
+        if (item.precio > 0) {
 
             mensaje +=
-                "%0A";
+                " — " +
+                formatearPrecio(subtotal);
+
+        } else {
+
+            mensaje +=
+                " — Consultar";
 
         }
-    );
+
+
+        mensaje +=
+            "\n";
+
+    });
 
 
     mensaje +=
-        "%0A💰 *TOTAL: " +
-        encodeURIComponent(
-            formatearPrecio(total)
-        ) +
+        "\n💰 *TOTAL: " +
+        formatearPrecio(total) +
         "*";
 
 
     if (comentario) {
 
         mensaje +=
-            "%0A%0A📝 Comentario: " +
-            encodeURIComponent(
-                comentario
-            );
+            "\n\n📝 Comentario: " +
+            comentario;
 
     }
 
 
     /* =================================================
        WHATSAPP
-       
-       REEMPLAZAR ESTE NÚMERO POR EL
-       WHATSAPP REAL DE CAFETERÍA ANITA.
+
+       CAMBIAR ESTE NÚMERO POR EL REAL
+       DE CAFETERÍA ANITA.
+
+       FORMATO:
+       549 + CÓDIGO DE ÁREA + NÚMERO
+       SIN +, SIN ESPACIOS Y SIN GUIONES.
     ================================================= */
 
     const numeroWhatsApp =
-        "543743618225";
+        "5490000000000";
 
 
     const url =
         "https://wa.me/" +
         numeroWhatsApp +
         "?text=" +
-        mensaje;
+        encodeURIComponent(mensaje);
 
 
     window.open(
@@ -3371,22 +3415,64 @@ function enviarPedido() {
 function irA(id) {
 
     const elemento =
-        document.getElementById(
-            id
+        document.getElementById(id);
+
+
+    if (!elemento) {
+        return;
+    }
+
+
+    elemento.scrollIntoView({
+
+        behavior:
+            "smooth",
+
+        block:
+            "start"
+
+    });
+
+
+    activarBotonNav(id);
+
+}
+
+
+/* =====================================================
+   ACTIVAR BOTÓN DE NAVEGACIÓN
+===================================================== */
+
+function activarBotonNav(id) {
+
+    const botones =
+        document.querySelectorAll(".nav-btn");
+
+
+    botones.forEach(
+        boton => {
+
+            boton.classList.remove(
+                "activo"
+            );
+
+        }
+    );
+
+
+    const botonActivo =
+        Array.from(botones).find(
+            boton =>
+                boton.getAttribute("onclick") ===
+                `irA('${id}')`
         );
 
 
-    if (elemento) {
+    if (botonActivo) {
 
-        elemento.scrollIntoView({
-
-            behavior:
-                "smooth",
-
-            block:
-                "start"
-
-        });
+        botonActivo.classList.add(
+            "activo"
+        );
 
     }
 
@@ -3400,9 +3486,12 @@ function irA(id) {
 function irAlCarrito() {
 
     const carritoElemento =
-        document.getElementById(
-            "carrito"
-        );
+        document.getElementById("carrito");
+
+
+    if (!carritoElemento) {
+        return;
+    }
 
 
     carritoElemento.scrollIntoView({
@@ -3422,18 +3511,22 @@ function irAlCarrito() {
    TOAST
 ===================================================== */
 
+let toastTimeout;
+
+
 function mostrarToast(texto) {
 
     const toast =
-        document.getElementById(
-            "toast"
-        );
+        document.getElementById("toast");
 
 
     const toastTexto =
-        document.getElementById(
-            "toastTexto"
-        );
+        document.getElementById("toastTexto");
+
+
+    if (!toast || !toastTexto) {
+        return;
+    }
 
 
     toastTexto.textContent =
@@ -3445,19 +3538,112 @@ function mostrarToast(texto) {
     );
 
 
-    setTimeout(
-        () => {
-
-            toast.classList.remove(
-                "mostrar"
-            );
-
-        },
-        1800
+    clearTimeout(
+        toastTimeout
     );
+
+
+    toastTimeout =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "mostrar"
+                );
+
+            },
+            1800
+        );
 
 }
 
+
+/* =====================================================
+   NAVEGACIÓN ACTIVA AL HACER SCROLL
+===================================================== */
+
+const secciones =
+    document.querySelectorAll(".seccion");
+
+
+const botonesNav =
+    document.querySelectorAll(".nav-btn");
+
+
+const observador =
+    new IntersectionObserver(
+        (entradas) => {
+
+            entradas.forEach(
+                entrada => {
+
+                    if (
+                        entrada.isIntersecting
+                    ) {
+
+                        const id =
+                            entrada.target.id;
+
+
+                        botonesNav.forEach(
+                            boton => {
+
+                                boton.classList.remove(
+                                    "activo"
+                                );
+
+                            }
+                        );
+
+
+                        const botonActivo =
+                            Array.from(
+                                botonesNav
+                            ).find(
+                                boton =>
+                                    boton.getAttribute("onclick") ===
+                                    `irA('${id}')`
+                            );
+
+
+                        if (botonActivo) {
+
+                            botonActivo.classList.add(
+                                "activo"
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            root: null,
+
+            threshold: 0.25
+        }
+    );
+
+
+secciones.forEach(
+    seccion => {
+
+        observador.observe(
+            seccion
+        );
+
+    }
+);
+
+
+/* =====================================================
+   INICIAR CARRITO
+===================================================== */
+
+actualizarCarrito();
 
 </script>
 
